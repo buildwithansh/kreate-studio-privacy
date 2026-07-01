@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return, Refund, and Cancellation Policy | Kreate Studio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+        :root {
+            --bg-color: #030303;
+            --text-color: #a1a1aa;
+            --heading-color: #f4f4f5;
+            --accent-color: #6366f1; /* Minimal AI indigo */
+            --border-color: #1f1f22;
+            --surface-color: #09090b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+            background: var(--surface-color);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle glow effect for that "AI" aesthetic */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.3;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 12px;
+            box-shadow: 0 0 12px var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        li::marker {
+            color: var(--accent-color);
+        }
+
+        strong {
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        em {
+            color: #71717a;
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        .footer-contact {
+            text-align: center;
+            margin-top: 5rem;
+            padding: 2.5rem;
+            background: var(--surface-color);
+            border-radius: 16px;
+            border: 1px dashed var(--border-color);
+        }
+
+        .footer-contact p {
+            margin-bottom: 0;
+            color: var(--heading-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">Legal Document</div>
+            <h1>Return, Refund, and Cancellation Policy</h1>
+            <p style="color: #71717a; font-size: 0.95rem;">Effective Date: July 1, 2026</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. Introduction and General Terms</h2>
+                <p>Kreate Studio operates as a premium marketplace for digital assets, templates, codebases, and creative resources. By purchasing digital assets, software, or subscriptions through our platform, you (the "Buyer") expressly agree to the terms outlined within this document.</p>
+                <p>For all transactions on the platform, Kreate Studio acts as the legal seller and Merchant of Record (MoR). We process all financial transactions securely through our designated payment gateway partner, Razorpay. Please note that this Policy is universally applicable across the entire Kreate Studio platform. Individual creators cannot override this Policy with their own custom refund terms.</p>
+            </section>
+
+            <section>
+                <h2>2. Digital Products and One-Time Purchases</h2>
+                <p>Due to the inherently irreversible nature of digital goods, our refund policy strictly distinguishes between files that have been accessed by the buyer and those that remain unaccessed.</p>
+                
+                <h3>2.1. Un-downloaded Purchases (30-Day Window)</h3>
+                <p>We understand that accidental purchases happen. If you purchase a digital asset on Kreate Studio but <strong>never</strong> download the file, stream the content, or generate a license key, you are fully eligible for a refund. To qualify, you must submit your formal refund request to our support team within <strong>thirty (30) days</strong> of the original transaction date. Once verified that the digital asset was completely untouched, the refund will be approved.</p>
+
+                <h3>2.2. Downloaded Purchases (All Sales Final)</h3>
+                <p>Once a digital asset has been downloaded, accessed, viewed, or a corresponding license key has been generated on your account, the transaction crosses the threshold of consumption. From this point forward, the sale is considered strictly final and non-refundable. Digital pixels and code cannot be "returned" in the traditional sense, necessitating this strict protection for our creators.</p>
+
+                <h3>2.3. Valid Exceptions for Defective Products</h3>
+                <p>While the "All Sales Final" rule applies to downloaded assets, Kreate Studio provides exceptions if the product delivered is fundamentally defective. A post-download refund will be granted <strong>only</strong> if the asset falls into one of the following specific categories:</p>
+                <ul>
+                    <li><strong>File Corruption:</strong> The downloaded digital file is completely corrupted, broken, and cannot be opened using standard, advertised software.</li>
+                    <li><strong>Missing Components:</strong> The product is demonstrably missing core assets, files, or elements that were explicitly advertised on the creator's product page.</li>
+                    <li><strong>Functional Failure:</strong> The source code, software, or script fundamentally fails to execute or function as described in the documentation or product listing.</li>
+                </ul>
+                <p><em>Please be advised: Incompatibility with third-party software not explicitly mentioned in the product description, lack of required skill to use the asset, or a simple "change of mind" do not qualify as valid exceptions for a post-download refund.</em></p>
+            </section>
+
+            <section>
+                <h2>3. Subscriptions and Memberships</h2>
+                <p>Kreate Studio allows creators to offer subscription-based products, such as ongoing access to private libraries, monthly asset drops, or recurring software licenses. The following rules govern cancellations for these recurring charges:</p>
+                
+                <h3>3.1. Cancellation Timeline</h3>
+                <p>Buyers retain full control over their recurring payments. You may cancel your recurring subscription at any time through your Kreate Studio dashboard. Initiating a cancellation will immediately halt all future billing cycles, ensuring you will not be charged again.</p>
+
+                <h3>3.2. Access Post-Cancellation</h3>
+                <p>Kreate Studio does not offer pro-rated or partial refunds for mid-cycle cancellations. If you cancel a subscription midway through your current billing cycle (e.g., on day 10 of a 30-day month), you will not receive a refund for the remaining 20 days. Instead, you will retain full, uninterrupted access to the subscription content until the very end of your currently paid billing period, at which point access will be automatically revoked.</p>
+            </section>
+
+            <section>
+                <h2>4. Refund Processing and Financial Liabilities</h2>
+                <p>All refund requests are subjected to a manual review and verification process by the Kreate Studio moderation team to ensure policy compliance.</p>
+                
+                <h3>4.1. Payment Gateway Fees</h3>
+                <p>When Kreate Studio processes an approved refund, our payment gateway provider (Razorpay) does not refund the transaction processing fees originally incurred during the sale. <strong>The buyer is strictly responsible for absorbing this non-refundable gateway fee.</strong> Consequently, any approved refund will be issued as the total original purchase price minus the Razorpay processing fees.</p>
+
+                <h3>4.2. Processing Timelines</h3>
+                <p>Once a refund is officially approved by our team, it will be credited back to the original payment method used during checkout. Please allow standard processing times (typically 5 to 10 business days) for the funds to reflect in your bank account or credit card statement, depending entirely on your financial institution's processing speeds.</p>
+            </section>
+
+            <section>
+                <h2>5. Dispute Resolution and Fair Use Enforcement</h2>
+                <p>Maintaining a fair and trustworthy ecosystem for both buyers and creators is our highest priority.</p>
+                
+                <h3>5.1. Platform Arbitration</h3>
+                <p>In the event of an unresolvable dispute between a buyer and a creator regarding product functionality or refund eligibility, the Kreate Studio support and moderation team will intervene to investigate the claims. We will review the product description, the downloaded files, and any communication. The final decision rendered by Kreate Studio following this arbitration is binding and conclusive.</p>
+
+                <h3>5.2. Abuse of Policy and Account Termination</h3>
+                <p>We rigorously monitor refund metrics and request patterns to prevent system abuse and fraud. If our automated systems or manual review team detect that a user account is abusing the refund policy—such as systematically purchasing, downloading, and subsequently attempting to refund multiple digital assets—that account will be immediately and permanently banned from Kreate Studio. Furthermore, all pending or future refund requests associated with the offending user will be summarily denied.</p>
+            </section>
+
+            <section>
+                <h2>6. Creator (Seller) Tax Responsibilities</h2>
+                <p>While Kreate Studio acts as the Merchant of Record for payment processing, the individual creators (sellers) maintain distinct tax liabilities.</p>
+                <ul>
+                    <li><strong>Tax Liability:</strong> The creator is solely and completely responsible for determining, calculating, and remitting any Goods and Services Tax (GST), income tax, or other applicable tax obligations arising from their sales on Kreate Studio.</li>
+                    <li><strong>No Withholding:</strong> Kreate Studio does not currently calculate, withhold, or remit taxes on behalf of the seller to any government entity. Sellers must factor any necessary and applicable taxes into the final listing prices of their products according to their local and national tax laws.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. Governing Law and Jurisdiction</h2>
+                <p>These conditions, policies, and any associated contracts are governed by and construed in accordance with the laws of India. Any disputes, claims, or legal proceedings arising from these terms, the usage of the Kreate Studio platform, or transactions conducted herein shall be subject to the exclusive jurisdiction of the competent courts located in <strong>Agra, Uttar Pradesh, India</strong>.</p>
+            </section>
+            
+            <div class="footer-contact">
+                <p>For any further inquiries or to initiate a refund request, please contact our support team directly through your Kreate Studio dashboard.</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
