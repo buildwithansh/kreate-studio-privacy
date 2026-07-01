@@ -4,65 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Kreate Studio</title>
-<meta name="description" content="Privacy Policy for Kreate Studio, India's first creative assets marketplace. Published in accordance with the IT Act 2000 and IT Rules 2021.">
+<meta name="description" content="Privacy Policy for Kreate Studio, India's first creative assets marketplace.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* --- palette: on-chain ledger, purple×cyan duotone --- */
-    --void:#08080C;         /* deepest base */
-    --abyss:#0A0A11;        /* body base */
-    --panel:#0E0E16;        /* raised glass */
-    --panel-lift:#12121C;   /* hover/raised */
-    --edge:#1E1E2E;         /* hairline */
-    --edge-soft:#17172333;
+    --void:#08080C; --abyss:#0A0A11; --panel:#0E0E16; --panel-lift:#12121C;
+    --edge:#1E1E2E;
 
-    --iris:#7C5CFC;         /* primary accent (from brief) */
-    --iris-bright:#9B84FF;
-    --cyan:#22D3EE;         /* secondary accent */
-    --cyan-dim:#22d3ee22;
+    --iris:#7C5CFC; --iris-bright:#9B84FF; --cyan:#22D3EE;
 
-    --text:#ECECF6;
-    --body:#C4C4D6;
-    --muted:#8E8EB0;
-    --faint:#63637F;
+    --text:#ECECF6; --body:#C4C4D6; --muted:#8E8EB0; --faint:#63637F;
 
     --grad:linear-gradient(100deg,var(--iris) 0%,var(--cyan) 100%);
-    --grad-soft:linear-gradient(120deg,#7C5CFC 0%,#22D3EE 120%);
 
     --display:'Space Grotesk',system-ui,sans-serif;
     --sans:'Inter',system-ui,-apple-system,sans-serif;
     --mono:'JetBrains Mono',ui-monospace,monospace;
     --maxw:1160px;
-
     --ease:cubic-bezier(.22,1,.36,1);
   }
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-
   body{
-    margin:0;
-    font-family:var(--sans);
-    font-size:16.5px;
-    line-height:1.72;
-    color:var(--body);
-    background:var(--abyss);
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    overflow-x:hidden;
+    margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.72;
+    color:var(--body);background:var(--abyss);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
   }
-
-  /* ambient atmosphere — two faint fixed glows behind everything */
   body::before,body::after{
-    content:"";position:fixed;inset:auto;z-index:-2;pointer-events:none;
+    content:"";position:fixed;z-index:-2;pointer-events:none;
     width:60vw;height:60vw;border-radius:50%;filter:blur(120px);opacity:.5;
   }
   body::before{top:-18vw;left:-14vw;background:radial-gradient(circle,rgba(124,92,252,.20),transparent 66%);}
   body::after{top:32vh;right:-20vw;background:radial-gradient(circle,rgba(34,211,238,.13),transparent 66%);}
-
-  /* faint dotted grid — the "ledger paper" */
   .grid-veil{
     position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.5;
     background-image:radial-gradient(rgba(124,92,252,.10) 1px,transparent 1px);
@@ -70,20 +46,14 @@
     -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000,transparent 75%);
             mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000,transparent 75%);
   }
-
   ::selection{background:rgba(124,92,252,.35);color:#fff;}
 
-  /* ---------- reading progress beam ---------- */
   #progress{
-    position:fixed;top:0;left:0;height:2px;width:0;z-index:60;
-    background:var(--grad);
-    box-shadow:0 0 12px rgba(124,92,252,.7),0 0 4px rgba(34,211,238,.8);
-    transition:width .1s linear;
+    position:fixed;top:0;left:0;height:2px;width:0;z-index:60;background:var(--grad);
+    box-shadow:0 0 12px rgba(124,92,252,.7),0 0 4px rgba(34,211,238,.8);transition:width .1s linear;
   }
 
-  /* =========================================================
-     HERO
-  ========================================================= */
+  /* HERO */
   header.masthead{
     position:relative;overflow:hidden;
     padding:clamp(72px,12vw,120px) 24px clamp(56px,8vw,84px);
@@ -97,19 +67,11 @@
     font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.22em;
     text-transform:uppercase;color:var(--cyan);
     padding:7px 15px;border:1px solid var(--edge);border-radius:999px;
-    background:rgba(14,14,22,.6);backdrop-filter:blur(8px);
-    margin-bottom:26px;
+    background:rgba(14,14,22,.6);backdrop-filter:blur(8px);margin-bottom:26px;
   }
-  .eyebrow .dot{
-    width:6px;height:6px;border-radius:50%;background:var(--cyan);
-    box-shadow:0 0 0 0 rgba(34,211,238,.6);
-    animation:pulse 2.4s var(--ease) infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(34,211,238,.55);}
-    70%{box-shadow:0 0 0 7px rgba(34,211,238,0);}
-    100%{box-shadow:0 0 0 0 rgba(34,211,238,0);}
-  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 0 0 rgba(34,211,238,.6);animation:pulse 2.4s var(--ease) infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.55);}70%{box-shadow:0 0 0 7px rgba(34,211,238,0);}100%{box-shadow:0 0 0 0 rgba(34,211,238,0);}}
 
   .wordmark{
     font-family:var(--display);font-weight:700;line-height:.98;
@@ -118,22 +80,17 @@
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .subtitle{
-    font-family:var(--display);font-weight:500;
-    font-size:clamp(19px,3.4vw,30px);letter-spacing:-.01em;
-    margin:10px 0 0;color:transparent;
+    font-family:var(--display);font-weight:500;font-size:clamp(19px,3.4vw,30px);
+    letter-spacing:-.01em;margin:10px 0 0;color:transparent;
     background:var(--grad);-webkit-background-clip:text;background-clip:text;
   }
-  .accent-rule{
-    width:72px;height:3px;border:0;margin:26px 0 0;border-radius:2px;
-    background:var(--grad);box-shadow:0 0 18px rgba(124,92,252,.5);
-  }
+  .accent-rule{width:72px;height:3px;border:0;margin:26px 0 0;border-radius:2px;
+    background:var(--grad);box-shadow:0 0 18px rgba(124,92,252,.5);}
 
-  /* on-chain metadata chips */
   .meta-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
   .chip{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.02em;
-    color:var(--muted);
+    font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);
     padding:8px 13px;border:1px solid var(--edge);border-radius:9px;
     background:rgba(12,12,20,.55);backdrop-filter:blur(8px);
   }
@@ -142,200 +99,102 @@
   .chip svg{width:13px;height:13px;flex:none;}
   .chip .hash{color:var(--iris-bright);}
 
-  /* =========================================================
-     COMPLIANCE NOTE
-  ========================================================= */
-  .compliance{max-width:var(--maxw);margin:-30px auto 0;padding:0 24px;position:relative;z-index:5;}
-  .compliance-card{
-    position:relative;
-    background:linear-gradient(180deg,var(--panel),#0B0B12);
-    border:1px solid var(--edge);border-radius:16px;
-    padding:22px 26px 22px 30px;
-    color:var(--muted);font-size:14.5px;line-height:1.7;
-    box-shadow:0 24px 60px -30px rgba(0,0,0,.8),0 0 0 1px rgba(124,92,252,.04) inset;
-    overflow:hidden;
-  }
-  .compliance-card::before{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);
-  }
-  .compliance-card b{color:var(--text);font-weight:600;}
-
-  /* =========================================================
-     SHELL / LAYOUT
-  ========================================================= */
+  /* SHELL */
   .shell{
-    max-width:var(--maxw);margin:0 auto;padding:56px 24px 0;
+    max-width:var(--maxw);margin:0 auto;padding:64px 24px 0;
     display:grid;grid-template-columns:236px 1fr;gap:64px;align-items:start;
   }
 
-  /* ---------- CHAIN NAVIGATOR (signature) ---------- */
+  /* CHAIN NAV */
   nav.chain{position:sticky;top:32px;}
-  .chain-label{
-    font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--faint);margin:0 0 20px;padding-left:26px;
-  }
+  .chain-label{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--faint);margin:0 0 20px;padding-left:26px;}
   .chain ol{list-style:none;margin:0;padding:0;position:relative;}
-  /* the spine */
-  .chain ol::before{
-    content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
-    background:var(--edge);
-  }
-  /* the traveling energy on the spine */
-  .chain ol::after{
-    content:"";position:absolute;left:5px;width:4px;height:var(--fill,0px);top:6px;
-    background:var(--grad);border-radius:2px;
-    box-shadow:0 0 10px rgba(124,92,252,.7);
-    transition:height .25s var(--ease);
-  }
+  .chain ol::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--edge);}
+  .chain ol::after{content:"";position:absolute;left:5px;width:4px;height:var(--fill,0px);top:6px;
+    background:var(--grad);border-radius:2px;box-shadow:0 0 10px rgba(124,92,252,.7);transition:height .25s var(--ease);}
   .chain li{position:relative;}
-  .chain a{
-    display:block;position:relative;text-decoration:none;
-    color:var(--muted);font-size:13.5px;line-height:1.35;
-    padding:8px 0 8px 26px;
-    transition:color .2s var(--ease),transform .2s var(--ease);
-  }
-  .chain a::before{ /* node */
-    content:"";position:absolute;left:1px;top:13px;width:12px;height:12px;border-radius:50%;
-    background:var(--abyss);border:2px solid var(--edge);
-    transition:all .25s var(--ease);z-index:2;
-  }
+  .chain a{display:block;position:relative;text-decoration:none;color:var(--muted);
+    font-size:13.5px;line-height:1.35;padding:8px 0 8px 26px;
+    transition:color .2s var(--ease),transform .2s var(--ease);}
+  .chain a::before{content:"";position:absolute;left:1px;top:13px;width:12px;height:12px;border-radius:50%;
+    background:var(--abyss);border:2px solid var(--edge);transition:all .25s var(--ease);z-index:2;}
   .chain a:hover{color:var(--text);transform:translateX(2px);}
   .chain a:hover::before{border-color:var(--iris);}
   .chain a.active{color:var(--text);font-weight:500;}
-  .chain a.active::before{
-    border-color:var(--iris);background:var(--iris);
-    box-shadow:0 0 0 4px rgba(124,92,252,.18),0 0 14px rgba(124,92,252,.7);
-  }
+  .chain a.active::before{border-color:var(--iris);background:var(--iris);
+    box-shadow:0 0 0 4px rgba(124,92,252,.18),0 0 14px rgba(124,92,252,.7);}
   .chain a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px;}
-
-  /* mobile disclosure wrapper hidden on desktop */
   .chain-mobile-toggle{display:none;}
 
-  /* ---------- CONTENT ---------- */
+  /* CONTENT */
   main{min-width:0;padding-bottom:80px;}
-
   .block{
-    position:relative;scroll-margin-top:28px;
-    padding:30px 30px 26px;margin:0 0 22px;
+    position:relative;scroll-margin-top:28px;padding:30px 30px 26px;margin:0 0 22px;
     border:1px solid var(--edge);border-radius:18px;
     background:linear-gradient(180deg,rgba(14,14,22,.66),rgba(9,9,15,.5));
-    /* scroll-reveal init state */
     opacity:0;transform:translateY(22px);
     transition:opacity .7s var(--ease),transform .7s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
   }
   .block.in{opacity:1;transform:none;}
-  .block:hover{
-    border-color:#2b2b40;
-    box-shadow:0 20px 50px -32px rgba(0,0,0,.9),0 0 0 1px rgba(124,92,252,.05) inset;
-  }
-  .block::after{ /* corner index glow line */
-    content:"";position:absolute;left:30px;right:30px;top:0;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(124,92,252,.4),transparent);
-    opacity:0;transition:opacity .3s var(--ease);
-  }
+  .block:hover{border-color:#2b2b40;box-shadow:0 20px 50px -32px rgba(0,0,0,.9),0 0 0 1px rgba(124,92,252,.05) inset;}
+  .block::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(124,92,252,.4),transparent);opacity:0;transition:opacity .3s var(--ease);}
   .block:hover::after{opacity:1;}
 
-  .block-index{
-    font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;
-    color:var(--faint);display:flex;align-items:center;gap:9px;margin-bottom:2px;
-  }
+  .block-index{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;
+    color:var(--faint);display:flex;align-items:center;gap:9px;margin-bottom:2px;}
   .block-index .hash{color:var(--iris);}
   .block-index .glyph{color:var(--cyan);opacity:.7;}
 
-  h2{
-    font-family:var(--display);font-weight:600;letter-spacing:-.01em;
-    color:var(--text);font-size:clamp(21px,2.6vw,26px);
-    margin:4px 0 14px;line-height:1.2;
-  }
-  h3{
-    font-family:var(--display);font-weight:500;color:var(--iris-bright);
-    font-size:15.5px;letter-spacing:.01em;margin:22px 0 4px;
-    display:flex;align-items:baseline;gap:9px;
-  }
+  h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em;color:var(--text);
+    font-size:clamp(21px,2.6vw,26px);margin:4px 0 14px;line-height:1.2;}
+  h3{font-family:var(--display);font-weight:500;color:var(--iris-bright);font-size:15.5px;
+    letter-spacing:.01em;margin:22px 0 4px;display:flex;align-items:baseline;gap:9px;}
   h3 .n{font-family:var(--mono);font-size:12px;color:var(--faint);}
 
   p{margin:12px 0;color:var(--body);}
   strong{color:var(--text);font-weight:600;}
-
-  a.inline{
-    color:var(--cyan);text-decoration:none;
-    border-bottom:1px solid rgba(34,211,238,.35);
-    transition:border-color .2s var(--ease),color .2s var(--ease);
-  }
+  a.inline{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(34,211,238,.35);
+    transition:border-color .2s var(--ease),color .2s var(--ease);}
   a.inline:hover{color:#7ff0ff;border-bottom-color:var(--cyan);}
 
   ul{margin:14px 0;padding-left:0;list-style:none;}
   ul li{position:relative;padding:5px 0 5px 24px;color:var(--body);}
-  ul li::before{
-    content:"";position:absolute;left:3px;top:13px;width:7px;height:7px;border-radius:2px;
-    background:var(--grad);transform:rotate(45deg);
-    box-shadow:0 0 8px rgba(124,92,252,.5);
-  }
+  ul li::before{content:"";position:absolute;left:3px;top:13px;width:7px;height:7px;border-radius:2px;
+    background:var(--grad);transform:rotate(45deg);box-shadow:0 0 8px rgba(124,92,252,.5);}
 
-  .lead-note{color:var(--muted);font-size:15px;}
-
-  /* ---------- info cards (grievance / contact) ---------- */
-  .card{
-    border:1px solid var(--edge);border-radius:14px;overflow:hidden;margin:22px 0;
-    background:rgba(9,9,15,.5);
-  }
-  .card-row{display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--edge);}
+  /* info card */
+  .card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;margin:22px 0;background:rgba(9,9,15,.5);}
+  .card-row{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--edge);}
   .card-row:first-child{border-top:0;}
-  .card-row dt{
-    font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--cyan);background:rgba(34,211,238,.045);
-    padding:14px 18px;margin:0;display:flex;align-items:center;
-  }
+  .card-row dt{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--cyan);background:rgba(34,211,238,.045);padding:14px 18px;margin:0;display:flex;align-items:center;}
   .card-row dd{padding:14px 18px;margin:0;color:var(--body);}
   .card-row dd strong{color:var(--text);}
   .card-row dd a{color:var(--iris-bright);font-weight:500;text-decoration:none;}
   .card-row dd a:hover{color:#fff;}
 
-  .callout{
-    position:relative;border:1px solid var(--edge);border-radius:14px;
-    padding:18px 22px 18px 24px;margin:18px 0;font-size:15px;color:var(--body);
-    background:linear-gradient(180deg,rgba(124,92,252,.06),rgba(34,211,238,.03));
-    overflow:hidden;
-  }
-  .callout::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);}
-  .callout strong{color:var(--iris-bright);}
-
-  /* ---------- footer ---------- */
-  footer{
-    border-top:1px solid var(--edge);margin-top:48px;padding:44px 24px 64px;text-align:center;
-    position:relative;
-  }
+  /* footer */
+  footer{border-top:1px solid var(--edge);margin-top:48px;padding:44px 24px 64px;text-align:center;}
   .footer-inner{max-width:var(--maxw);margin:0 auto;color:var(--muted);}
-  .footer-inner .tag{
-    font-family:var(--display);font-weight:500;font-size:16px;color:transparent;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;
-  }
+  .footer-inner .tag{font-family:var(--display);font-weight:500;font-size:16px;color:transparent;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;}
   .footer-inner .made{margin-top:8px;font-size:13.5px;color:var(--faint);}
-  .footer-inner .sig{
-    font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);
-    margin-top:18px;text-transform:uppercase;
-  }
+  .footer-inner .sig{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--faint);
+    margin-top:18px;text-transform:uppercase;}
 
-  /* =========================================================
-     RESPONSIVE
-  ========================================================= */
+  /* RESPONSIVE */
   @media (max-width:900px){
-    .shell{grid-template-columns:1fr;gap:0;padding-top:34px;}
+    .shell{grid-template-columns:1fr;gap:0;padding-top:38px;}
     nav.chain{position:static;margin-bottom:26px;}
-    .chain-mobile-toggle{
-      display:flex;align-items:center;justify-content:space-between;width:100%;
-      font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-      color:var(--text);cursor:pointer;
-      padding:15px 18px;border:1px solid var(--edge);border-radius:12px;
-      background:var(--panel);
-    }
+    .chain-mobile-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);
+      cursor:pointer;padding:15px 18px;border:1px solid var(--edge);border-radius:12px;background:var(--panel);}
     .chain-mobile-toggle .caret{color:var(--cyan);transition:transform .3s var(--ease);}
     nav.chain.open .chain-mobile-toggle .caret{transform:rotate(180deg);}
     .chain-label{display:none;}
-    .chain-body{
-      max-height:0;overflow:hidden;
-      transition:max-height .4s var(--ease);
-    }
+    .chain-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
     nav.chain.open .chain-body{max-height:900px;}
     .chain-body-pad{padding:20px 6px 6px;}
     .chain ol{columns:2;column-gap:22px;}
@@ -347,17 +206,8 @@
     .card-row{grid-template-columns:1fr;}
     .card-row dt{border-bottom:1px solid var(--edge);}
   }
+  @media (max-width:480px){ body{font-size:16px;} h3{flex-wrap:wrap;} }
 
-  @media (max-width:480px){
-    body{font-size:16px;}
-    .compliance{margin-top:-22px;}
-    .compliance-card{padding:18px 20px 18px 22px;}
-    h3{flex-wrap:wrap;}
-  }
-
-  /* =========================================================
-     REDUCED MOTION
-  ========================================================= */
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
     *,*::before,*::after{animation:none !important;transition:none !important;}
@@ -385,7 +235,7 @@
       </span>
       <span class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/></svg>
-        <span class="k">jurisdiction</span> <b>India · IT Act 2000</b>
+        <span class="k">region</span> <b>India</b>
       </span>
       <span class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
@@ -395,18 +245,10 @@
   </div>
 </header>
 
-<div class="compliance">
-  <div class="compliance-card">
-    This Privacy Policy is published in accordance with the <b>Information Technology Act, 2000</b> and the
-    <b>Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</b>, and constitutes
-    an electronic record generated by a computer system that does not require any physical or digital signature.
-  </div>
-</div>
-
 <div class="shell">
   <nav class="chain" id="chainNav" aria-label="Table of contents">
     <div class="chain-mobile-toggle" id="chainToggle" role="button" tabindex="0" aria-expanded="true" aria-controls="chainBody">
-      <span>Contents · 15 blocks</span><span class="caret">⌄</span>
+      <span>Contents · 12 blocks</span><span class="caret">⌄</span>
     </div>
     <div class="chain-body" id="chainBody">
       <div class="chain-body-pad">
@@ -418,14 +260,11 @@
           <li><a href="#payments">Payment Processing</a></li>
           <li><a href="#storage">Data Storage</a></li>
           <li><a href="#sharing">Data Sharing</a></li>
-          <li><a href="#rights">Your Rights</a></li>
-          <li><a href="#retention">Data Retention</a></li>
+          <li><a href="#rights">User Rights</a></li>
           <li><a href="#deletion">Account Deletion</a></li>
           <li><a href="#children">Children's Privacy</a></li>
           <li><a href="#security">Security</a></li>
-          <li><a href="#grievance">Grievance Officer</a></li>
           <li><a href="#changes">Changes to This Policy</a></li>
-          <li><a href="#law">Governing Law</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ol>
       </div>
@@ -529,8 +368,8 @@
     </section>
 
     <section id="rights" class="block">
-      <div class="block-index"><span class="hash">0x07</span><span class="glyph">◇</span> BLOCK · YOUR RIGHTS</div>
-      <h2>Your Rights</h2>
+      <div class="block-index"><span class="hash">0x07</span><span class="glyph">◇</span> BLOCK · USER RIGHTS</div>
+      <h2>User Rights</h2>
       <p>You have the right to:</p>
       <ul>
         <li>Access your personal data</li>
@@ -539,24 +378,11 @@
         <li>Withdraw consent at any time</li>
       </ul>
       <p>To exercise these rights, contact us at:
-      <a class="inline" href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a>.</p>
-    </section>
-
-    <section id="retention" class="block">
-      <div class="block-index"><span class="hash">0x08</span><span class="glyph">◇</span> BLOCK · RETENTION</div>
-      <h2>Data Retention</h2>
-      <p>We retain your personal information only for as long as necessary to provide our services and to comply
-      with our legal obligations.</p>
-      <p>In accordance with Rule 3(1)(h) of the Information Technology (Intermediary Guidelines and Digital Media
-      Ethics Code) Rules, 2021, we retain user registration information for a period of
-      <strong>one hundred and eighty (180) days</strong> after the cancellation or withdrawal of your registration.
-      Where any information is removed or access to it is disabled, associated records may be preserved for one
-      hundred and eighty (180) days for investigation purposes, or for such longer period as may be required by law
-      or by a lawfully authorised government agency.</p>
+      <a class="inline" href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></p>
     </section>
 
     <section id="deletion" class="block">
-      <div class="block-index"><span class="hash">0x09</span><span class="glyph">◇</span> BLOCK · DELETION</div>
+      <div class="block-index"><span class="hash">0x08</span><span class="glyph">◇</span> BLOCK · DELETION</div>
       <h2>Account Deletion</h2>
       <p>You can delete your account from the App settings. Upon deletion:</p>
       <ul>
@@ -567,18 +393,16 @@
     </section>
 
     <section id="children" class="block">
-      <div class="block-index"><span class="hash">0x0A</span><span class="glyph">◇</span> BLOCK · MINORS</div>
+      <div class="block-index"><span class="hash">0x09</span><span class="glyph">◇</span> BLOCK · MINORS</div>
       <h2>Children's Privacy</h2>
       <p>Kreate Studio is not intended for users under 13 years of age. We do not knowingly collect personal
       information from children under 13.</p>
     </section>
 
     <section id="security" class="block">
-      <div class="block-index"><span class="hash">0x0B</span><span class="glyph">◇</span> BLOCK · SECURITY</div>
+      <div class="block-index"><span class="hash">0x0A</span><span class="glyph">◇</span> BLOCK · SECURITY</div>
       <h2>Security</h2>
-      <p>We implement industry-standard security measures to protect your data, following the reasonable security
-      practices and procedures prescribed under the Information Technology (Reasonable Security Practices and
-      Procedures and Sensitive Personal Data or Information) Rules, 2011. These measures include:</p>
+      <p>We implement industry-standard security measures to protect your data including:</p>
       <ul>
         <li>Email verification for all accounts</li>
         <li>Secure HTTPS connections</li>
@@ -587,51 +411,19 @@
       </ul>
     </section>
 
-    <section id="grievance" class="block">
-      <div class="block-index"><span class="hash">0x0C</span><span class="glyph">◇</span> BLOCK · GRIEVANCE</div>
-      <h2>Grievance Redressal and Grievance Officer</h2>
-      <p>If you have any grievance regarding the collection, use, storage, or sharing of your personal information,
-      or regarding any content on the App, you may contact our Grievance Officer using the details below.</p>
-      <p class="lead-note">In accordance with the Information Technology Act, 2000 and the rules made thereunder,
-      including Rule 3(2) of the Information Technology (Intermediary Guidelines and Digital Media Ethics Code)
-      Rules, 2021, the name and contact details of the Grievance Officer are provided below:</p>
-      <dl class="card">
-        <div class="card-row"><dt>Name</dt><dd><strong>Ansh Bhardwaj</strong></dd></div>
-        <div class="card-row"><dt>Designation</dt><dd>Grievance Officer, Kreate Studio</dd></div>
-        <div class="card-row"><dt>Address</dt><dd>Agra, Uttar Pradesh, India</dd></div>
-        <div class="card-row"><dt>Phone</dt><dd><a href="tel:+917310654465">+91 7310654465</a></dd></div>
-        <div class="card-row"><dt>Email</dt><dd><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></dd></div>
-      </dl>
-      <div class="callout">
-        The Grievance Officer shall <strong>acknowledge your complaint within twenty-four (24) hours</strong> and
-        shall <strong>resolve it within fifteen (15) days</strong> from the date of its receipt. Complaints relating
-        to content that exposes a person's private area, shows full or partial nudity, depicts a sexual act, or is
-        in the nature of impersonation (including morphed images) will be acted upon and access disabled within
-        twenty-four (24) hours of receipt.
-      </div>
-    </section>
-
     <section id="changes" class="block">
-      <div class="block-index"><span class="hash">0x0D</span><span class="glyph">◇</span> BLOCK · AMENDMENTS</div>
+      <div class="block-index"><span class="hash">0x0B</span><span class="glyph">◇</span> BLOCK · AMENDMENTS</div>
       <h2>Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the
       <strong>"Last updated"</strong> date at the top of this policy.</p>
     </section>
 
-    <section id="law" class="block">
-      <div class="block-index"><span class="hash">0x0E</span><span class="glyph">◇</span> BLOCK · GOVERNING LAW</div>
-      <h2>Governing Law and Jurisdiction</h2>
-      <p>This Privacy Policy, and any dispute arising out of or in connection with it or your use of the App, shall
-      be governed by and construed in accordance with the laws of India, and the courts at Agra, Uttar Pradesh shall
-      have exclusive jurisdiction.</p>
-    </section>
-
     <section id="contact" class="block">
-      <div class="block-index"><span class="hash">0x0F</span><span class="glyph">◇</span> BLOCK · CONTACT</div>
+      <div class="block-index"><span class="hash">0x0C</span><span class="glyph">◇</span> BLOCK · CONTACT</div>
       <h2>Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, please contact us:</p>
       <dl class="card">
-        <div class="card-row"><dt>Name</dt><dd>Ansh Bhardwaj</dd></div>
+        <div class="card-row"><dt>Name</dt><dd><strong>Ansh Bhardwaj</strong></dd></div>
         <div class="card-row"><dt>Email</dt><dd><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></dd></div>
         <div class="card-row"><dt>App</dt><dd>Kreate Studio</dd></div>
       </dl>
@@ -643,7 +435,7 @@
   <div class="footer-inner">
     <div class="tag">Kreate Studio — India's first creative assets marketplace</div>
     <div class="made">Made in India 🇮🇳</div>
-    <div class="sig">End of ledger · 15 / 15 blocks verified</div>
+    <div class="sig">End of ledger · 12 / 12 blocks verified</div>
   </div>
 </footer>
 
@@ -652,7 +444,6 @@
   "use strict";
   var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  /* ---------- reading progress + chain fill ---------- */
   var bar = document.getElementById('progress');
   var chainList = document.getElementById('chainList');
   function onScroll(){
@@ -660,7 +451,6 @@
     var max = h.scrollHeight - h.clientHeight;
     var pct = max > 0 ? (h.scrollTop || document.body.scrollTop) / max * 100 : 0;
     bar.style.width = pct + '%';
-    // fill the chain spine proportionally to scroll
     if (chainList){
       var full = chainList.getBoundingClientRect().height - 12;
       chainList.style.setProperty('--fill', Math.max(0, Math.min(full, full * pct/100)) + 'px');
@@ -670,7 +460,6 @@
   window.addEventListener('resize', onScroll, {passive:true});
   onScroll();
 
-  /* ---------- scroll-spy ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll('.chain a'));
   var map = {};
   links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
@@ -689,7 +478,6 @@
     }, {rootMargin:'-12% 0px -78% 0px', threshold:0});
     sections.forEach(function(s){ spy.observe(s); });
 
-    /* ---------- scroll reveal ---------- */
     var reveal = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if (e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); }
@@ -700,57 +488,40 @@
     sections.forEach(function(s){ s.classList.add('in'); });
   }
 
-  /* ---------- mobile chain toggle ---------- */
   var nav = document.getElementById('chainNav');
   var toggle = document.getElementById('chainToggle');
   function isMobile(){ return window.matchMedia('(max-width:900px)').matches; }
   if (!isMobile()) nav.classList.add('open');
-  function setOpen(open){
-    nav.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true':'false');
-  }
+  function setOpen(open){ nav.classList.toggle('open', open); toggle.setAttribute('aria-expanded', open?'true':'false'); }
   toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
-  toggle.addEventListener('keydown', function(e){
-    if (e.key==='Enter'||e.key===' '){ e.preventDefault(); setOpen(!nav.classList.contains('open')); }
-  });
+  toggle.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setOpen(!nav.classList.contains('open')); } });
   links.forEach(function(a){ a.addEventListener('click', function(){ if(isMobile()) setOpen(false); }); });
   window.addEventListener('resize', function(){ if(!isMobile()) nav.classList.add('open'); });
 
-  /* ---------- hero neural / on-chain mesh ---------- */
   if (reduce) return;
   var canvas = document.getElementById('mesh');
   if (!canvas || !canvas.getContext) return;
   var ctx = canvas.getContext('2d');
-  var W, H, DPR, nodes = [], mouse = {x:-9999, y:-9999};
-  var COUNT;
-
+  var W, H, DPR, nodes = [], mouse = {x:-9999, y:-9999}, COUNT;
   function size(){
     var r = canvas.parentElement.getBoundingClientRect();
     DPR = Math.min(window.devicePixelRatio || 1, 2);
     W = r.width; H = r.height;
-    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.width = W*DPR; canvas.height = H*DPR;
     canvas.style.width = W+'px'; canvas.style.height = H+'px';
     ctx.setTransform(DPR,0,0,DPR,0,0);
-    COUNT = Math.max(26, Math.min(64, Math.round(W * H / 22000)));
+    COUNT = Math.max(26, Math.min(64, Math.round(W*H/22000)));
     nodes = [];
-    for (var i=0;i<COUNT;i++){
-      nodes.push({
-        x:Math.random()*W, y:Math.random()*H,
-        vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
-        r:Math.random()*1.6+.7
-      });
-    }
+    for (var i=0;i<COUNT;i++) nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+.7});
   }
   size();
   window.addEventListener('resize', size);
-
   canvas.parentElement.addEventListener('mousemove', function(e){
-    var r = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    var r = canvas.getBoundingClientRect(); mouse.x = e.clientX-r.left; mouse.y = e.clientY-r.top;
   });
   canvas.parentElement.addEventListener('mouseleave', function(){ mouse.x=-9999; mouse.y=-9999; });
 
-  var LINK = 132;
+  var LINK = 132, raf;
   function frame(){
     ctx.clearRect(0,0,W,H);
     for (var i=0;i<nodes.length;i++){
@@ -758,39 +529,22 @@
       n.x+=n.vx; n.y+=n.vy;
       if (n.x<0||n.x>W) n.vx*=-1;
       if (n.y<0||n.y>H) n.vy*=-1;
-
-      // links
       for (var j=i+1;j<nodes.length;j++){
-        var m = nodes[j];
-        var dx=n.x-m.x, dy=n.y-m.y, d=Math.sqrt(dx*dx+dy*dy);
-        if (d<LINK){
-          var a=(1-d/LINK)*0.28;
-          ctx.strokeStyle='rgba(124,92,252,'+a+')';
-          ctx.lineWidth=1;
-          ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.stroke();
-        }
+        var m=nodes[j], dx=n.x-m.x, dy=n.y-m.y, d=Math.sqrt(dx*dx+dy*dy);
+        if (d<LINK){ ctx.strokeStyle='rgba(124,92,252,'+(1-d/LINK)*0.28+')'; ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.stroke(); }
       }
-      // cursor pull glow
-      var mdx=n.x-mouse.x, mdy=n.y-mouse.y, md=Math.sqrt(mdx*mdx+mdy*mdy);
-      var lit = md < 150;
-      if (lit){
-        var la=(1-md/150)*0.5;
-        ctx.strokeStyle='rgba(34,211,238,'+la+')';
-        ctx.lineWidth=1;
-        ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke();
-      }
-      // node
-      ctx.beginPath();
-      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-      ctx.fillStyle = lit ? 'rgba(34,211,238,.9)' : 'rgba(155,132,255,.55)';
-      ctx.fill();
+      var mdx=n.x-mouse.x, mdy=n.y-mouse.y, md=Math.sqrt(mdx*mdx+mdy*mdy), lit=md<150;
+      if (lit){ ctx.strokeStyle='rgba(34,211,238,'+(1-md/150)*0.5+')'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); }
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle = lit ? 'rgba(34,211,238,.9)' : 'rgba(155,132,255,.55)'; ctx.fill();
     }
     raf = requestAnimationFrame(frame);
   }
-  var raf = requestAnimationFrame(frame);
+  raf = requestAnimationFrame(frame);
   document.addEventListener('visibilitychange', function(){
-    if (document.hidden){ cancelAnimationFrame(raf); }
-    else { raf = requestAnimationFrame(frame); }
+    if (document.hidden) cancelAnimationFrame(raf); else raf = requestAnimationFrame(frame);
   });
 })();
 </script>
