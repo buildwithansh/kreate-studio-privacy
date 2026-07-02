@@ -1,1 +1,1 @@
-# kreate-studio-privacy
+# KREATE STUDIO LEGAL DOCUMENTS

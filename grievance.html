@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance Redressal Mechanism - Kreate Studio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Scroll margin for anchor links to account for fixed header/spacing */
+        section {
+            scroll-margin-top: 2rem;
+        }
+
+        /* Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Styling for placeholders to make them obvious to the admin */
+        .placeholder-field {
+            background-color: #fef3c7;
+            color: #d97706;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-weight: 600;
+            border: 1px dashed #f59e0b;
+        }
+        
+        .toc-link.active {
+            color: #2563eb;
+            font-weight: 600;
+            border-left-color: #2563eb;
+            background-color: #eff6ff;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-white border-b border-slate-200 relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-30 pointer-events-none">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[150%] rounded-full bg-gradient-to-tr from-brand-100 to-transparent blur-3xl"></div>
+            <div class="absolute top-[20%] -right-[10%] w-[40%] h-[100%] rounded-full bg-gradient-to-bl from-purple-100 to-transparent blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10 text-center">
+            <div class="inline-flex items-center justify-center space-x-2 mb-6">
+                <i class="ph-fill ph-paint-brush-broad text-3xl text-brand-600"></i>
+                <span class="font-heading font-bold text-2xl tracking-tight text-slate-900">KREATE STUDIO</span>
+            </div>
+            <p class="text-brand-600 font-medium tracking-wide uppercase text-sm mb-4">India's Creative Assets Marketplace</p>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+                Grievance Redressal Mechanism
+            </h1>
+            <p class="text-slate-500 text-lg max-w-2xl mx-auto mb-8">
+                Policy & Procedure for handling and resolving complaints and grievances.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-600">
+                <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 shadow-sm flex items-center">
+                    <i class="ph ph-calendar-blank mr-2 text-slate-400"></i>
+                    Effective Date: <span class="placeholder-field ml-2">02 July 2026</span>
+                </div>
+                <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 shadow-sm flex items-center">
+                    <i class="ph ph-clock-counter-clockwise mr-2 text-slate-400"></i>
+                    Last Updated: <span class="placeholder-field ml-2">02 July 2026</span>
+                </div>
+                <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 shadow-sm flex items-center">
+                    <i class="ph ph-git-branch mr-2 text-slate-400"></i>
+                    Version: 1.0
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row gap-12 items-start">
+
+        <!-- Mobile TOC Trigger (Hidden on Desktop) -->
+        <div class="lg:hidden w-full mb-6 relative" x-data="{ open: false }">
+            <button onclick="document.getElementById('mobile-toc').classList.toggle('hidden')" class="w-full bg-white border border-slate-200 shadow-sm rounded-xl px-4 py-3 flex justify-between items-center text-slate-700 font-medium active:bg-slate-50 transition-colors">
+                <span class="flex items-center"><i class="ph ph-list-dashes mr-2"></i> Table of Contents</span>
+                <i class="ph ph-caret-down"></i>
+            </button>
+            <div id="mobile-toc" class="hidden absolute top-full left-0 w-full bg-white border border-slate-200 shadow-lg rounded-xl mt-2 p-4 z-20 max-h-[60vh] overflow-y-auto">
+                <!-- Mobile TOC items generated by JS -->
+            </div>
+        </div>
+
+        <!-- Sticky Table of Contents (Desktop) -->
+        <aside class="hidden lg:block w-72 flex-shrink-0 sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto pr-4 custom-scrollbar">
+            <h4 class="font-heading font-semibold text-lg text-slate-900 mb-4 tracking-wide uppercase">Table of Contents</h4>
+            <nav id="desktop-toc" class="flex flex-col space-y-1 border-l-2 border-slate-200">
+                <!-- Links will be populated here, structure defined below -->
+                <a href="#notice" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">Template Notice</a>
+                <a href="#section-1" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">1. Purpose and Scope</a>
+                <a href="#section-2" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">2. Legal Framework</a>
+                <a href="#section-3" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">3. Definitions</a>
+                <a href="#section-4" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">4. Grievance Officer</a>
+                <a href="#section-5" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">5. Types of Grievances Covered</a>
+                <a href="#section-6" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">6. How to Submit a Grievance</a>
+                <a href="#section-7" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">7. Grievance Handling Process</a>
+                <a href="#section-8" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">8. Timelines for Resolution</a>
+                <a href="#section-9" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">9. Specific Grievance Procedures</a>
+                <a href="#section-10" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">10. Escalation and Appeals</a>
+                <a href="#section-11" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">11. Records & Confidentiality</a>
+                <a href="#section-12" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">12. Misuse of the Mechanism</a>
+                <a href="#section-13" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">13. Review and Amendment</a>
+                <a href="#section-14" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">14. Contact Summary</a>
+                <a href="#annexure-a" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">Annexure A — Template</a>
+                <a href="#annexure-b" class="toc-link block pl-4 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 transition-colors border-l-2 border-transparent -ml-[2px]">Annexure B — Pre-Publication</a>
+            </nav>
+        </aside>
+
+        <!-- Document Content -->
+        <div class="flex-1 min-w-0 bg-white rounded-3xl shadow-sm border border-slate-200 p-6 md:p-10 lg:p-12">
+            
+            <!-- Template Notice -->
+            <section id="notice" class="fade-up mb-12">
+                <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-5 sm:p-6 shadow-sm">
+                    <div class="flex items-start">
+                        <i class="ph-fill ph-warning-circle text-amber-500 text-2xl mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="text-amber-800 font-bold mb-2 uppercase text-sm tracking-wider">Template Notice</h3>
+                            <p class="text-amber-900 text-sm leading-relaxed">
+                                This mechanism is drafted to meet the grievance-redressal obligations that apply to an Indian marketplace intermediary. It should be read together with Kreate Studio's Terms of Service, Privacy Policy, Seller Agreement, and Refund & Cancellation Policy. Fields marked <span class="placeholder-field">[●]</span> — particularly the Grievance Officer's name and contact details — must be completed, and the document reviewed by a qualified Indian advocate, before publication.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="prose prose-slate prose-lg max-w-none">
+                
+                <section id="section-1" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">1.</span> Purpose and Scope
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">1.1</strong> This Grievance Redressal Mechanism (“Mechanism” or “Policy”) sets out how Kreate Studio (“we”, “us”, “our”) receives, acknowledges, handles, and resolves complaints and grievances from users of the Kreate Studio mobile application, website, and related services (the “Platform”).</p>
+                        <p><strong class="text-slate-800">1.2</strong> This Mechanism applies to all users of the Platform — including Buyers, Sellers, and visitors — and to any affected third party who wishes to raise a complaint regarding Content or conduct on the Platform.</p>
+                        <p><strong class="text-slate-800">1.3</strong> This Mechanism forms part of, and should be read together with, our Terms of Service (in particular the Grievance Redressal clause), Privacy Policy, Seller Agreement, and Refund & Cancellation Policy. In the event of any conflict, the Terms of Service shall govern the contractual relationship, while this Mechanism governs the grievance-handling procedure.</p>
+                        <p><strong class="text-slate-800">1.4</strong> Nothing in this Mechanism limits or replaces any statutory right or remedy available to a user under Indian law, including the right to approach a court, a consumer forum, or a statutory authority.</p>
+                    </div>
+                </section>
+
+                <section id="section-2" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">2.</span> Legal Framework
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">2.1</strong> This Mechanism is established in compliance with, and gives effect to, the following laws and rules, as applicable and as amended from time to time:</p>
+                        <ul class="list-disc pl-5 space-y-2 marker:text-brand-400">
+                            <li><strong class="text-slate-700">Information Technology Act, 2000 (“IT Act”)</strong>, and in particular Section 79 and the intermediary due-diligence framework;</li>
+                            <li><strong class="text-slate-700">Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021 (“IT Rules, 2021”)</strong>, including the requirement under Rule 3(2) to appoint a Grievance Officer and to acknowledge and resolve complaints within prescribed timelines;</li>
+                            <li><strong class="text-slate-700">Consumer Protection Act, 2019 and the Consumer Protection (E-Commerce) Rules, 2020</strong>, including the requirement under Rule 4 for an e-commerce entity to appoint a Grievance Officer and display their details;</li>
+                            <li><strong class="text-slate-700">Digital Personal Data Protection Act, 2023 (“DPDP Act”)</strong>, including the obligation of a Data Fiduciary to provide a readily available means of grievance redressal to Data Principals;</li>
+                            <li><strong class="text-slate-700">Copyright Act, 1957</strong> and applicable rules, in respect of complaints alleging infringement of copyright or other intellectual-property rights.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-3" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">3.</span> Definitions
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">3.1</strong> Capitalised terms used but not defined here have the meanings given in the Terms of Service. For the purposes of this Mechanism:</p>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 space-y-3">
+                            <p><strong>“Grievance” / “Complaint”</strong> means any dissatisfaction, objection, or report communicated by a Complainant regarding the Platform, Content, a transaction, conduct of a user, processing of personal data, or any alleged violation of the Terms of Service, this Mechanism, or applicable law.</p>
+                            <p><strong>“Complainant”</strong> means any person who submits a Grievance, whether a Buyer, Seller, visitor, or affected third party.</p>
+                            <p><strong>“Grievance Officer”</strong> means the officer appointed by Kreate Studio under the IT Rules, 2021 and the Consumer Protection (E-Commerce) Rules, 2020 to administer this Mechanism.</p>
+                            <p><strong>“Data Principal”</strong> and <strong>“Data Fiduciary”</strong> have the meanings given under the DPDP Act, 2023.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-4" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">4.</span> Grievance Officer
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">4.1</strong> In compliance with Rule 3(2) of the IT Rules, 2021 and Rule 4 of the Consumer Protection (E-Commerce) Rules, 2020, Kreate Studio has appointed the following Grievance Officer to receive and resolve Grievances:</p>
+                        
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm my-6">
+                            <table class="min-w-full divide-y divide-slate-200 text-sm">
+                                <tbody class="divide-y divide-slate-200 bg-white">
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50 w-1/3">Name</td>
+                                        <td class="px-4 py-3 text-slate-600"><span class="placeholder-field">Mr. Ansh Bhardwaj</span> (Grievance Officer name)</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50">Designation</td>
+                                        <td class="px-4 py-3 text-slate-600">Founder, Kreate Studio</td>
+                                    </tr>
+                                    <!-- <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50">Company / Entity</td>
+                                        <td class="px-4 py-3 text-slate-600"><span class="placeholder-field">[●]</span> (legal entity name, once formed)</td>
+                                    </tr> -->
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50">Email</td>
+                                        <td class="px-4 py-3 text-brand-600 font-medium">workwithansh8@gmail.com <span class="text-slate-400 font-normal text-xs ml-1">(dedicated grievance email)</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50">Postal Address</td>
+                                        <td class="px-4 py-3 text-slate-600"><span class="placeholder-field">Agra, Uttar Pradesh, India</span> </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 bg-slate-50">Working Hours</td>
+                                        <td class="px-4 py-3 text-slate-600"><span class="placeholder-field">Monday to Friday, 10:00 to 18:00 IST</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><strong class="text-slate-800">4.2</strong> The Grievance Officer is responsible for: (a) receiving and acknowledging Grievances; (b) coordinating their investigation and resolution within the timelines in Clause 8; (c) maintaining records of Grievances and their disposal; and (d) acting as the point of contact for users, affected persons, and, where applicable, government or judicial authorities.</p>
+                        <p><strong class="text-slate-800">4.3</strong> Kreate Studio will keep the Grievance Officer's details current and prominently published on the Platform. Any change will be updated on the Platform and in this Mechanism.</p>
+                    </div>
+                </section>
+
+                <section id="section-5" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">5.</span> Types of Grievances Covered
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">5.1</strong> This Mechanism covers Grievances including, but not limited to, the following categories:</p>
+                        
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm my-6">
+                            <table class="min-w-full divide-y divide-slate-200 text-sm">
+                                <thead class="bg-slate-50">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider w-1/3">Category</th>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider">Examples</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 bg-white">
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Objectionable / unlawful content</td>
+                                        <td class="px-4 py-3 text-slate-600">Content that is defamatory, obscene, harmful to a child, infringing, or otherwise prohibited under Rule 3(1)(b) of the IT Rules, 2021 or the Terms of Service.</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Intellectual-property infringement</td>
+                                        <td class="px-4 py-3 text-slate-600">A Listing or Content that infringes a complainant's copyright, trademark, or other IP rights (e.g., a re-uploaded asset, template, or LUT pack).</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Consumer / transaction disputes</td>
+                                        <td class="px-4 py-3 text-slate-600">Non-delivery of a purchased Creative Asset, an asset materially not as described, or a defective / non-functional file.</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Payment & refund issues</td>
+                                        <td class="px-4 py-3 text-slate-600">Failed or duplicate transactions, incorrect amounts, or refund requests under the Refund & Cancellation Policy.</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Data protection & privacy</td>
+                                        <td class="px-4 py-3 text-slate-600">Requests or complaints regarding the collection, use, correction, or erasure of personal data, or withdrawal of consent, under the DPDP Act, 2023.</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Safety, harassment & conduct</td>
+                                        <td class="px-4 py-3 text-slate-600">Reports of harassment, impersonation, abusive behaviour, or misuse of the Report / Block tools by another user.</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900 align-top">Seller-account / payout issues</td>
+                                        <td class="px-4 py-3 text-slate-600">Disputes about listing approval, account suspension, earnings, or payouts.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-6" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">6.</span> How to Submit a Grievance
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">6.1 Channels.</strong> A Complainant may submit a Grievance through any of the following:</p>
+                        <ul class="list-disc pl-5 space-y-2 marker:text-brand-400">
+                            <li><strong>In-app tools</strong> — the Report and Block features within the Platform, for objectionable Content or user conduct;</li>
+                            <li><strong>Email</strong> — to the Grievance Officer at <a href="mailto:workwithansh8@gmail.com" class="text-brand-600 hover:underline">workwithansh8@gmail.com</a>;</li>
+                            <li><strong>Written notice</strong> — by post to the Grievance Officer at the address in Clause 4.1.</li>
+                        </ul>
+
+                        <p><strong class="text-slate-800 mt-6 block">6.2 Information to include.</strong> To help us act promptly, a Grievance should include, so far as available:</p>
+                        <ol class="list-decimal pl-5 space-y-2 marker:text-brand-600 marker:font-medium">
+                            <li>the Complainant's name and contact details (email and, where relevant, postal address);</li>
+                            <li>a clear description of the Grievance, and the category it relates to (see Clause 5);</li>
+                            <li>identification of the relevant Listing, Content, transaction, or user (e.g., Listing link/ID, order/payment ID, username);</li>
+                            <li>for intellectual-property complaints, the additional details required under Clause 9.3;</li>
+                            <li>any supporting evidence (screenshots, links, documents); and</li>
+                            <li>the outcome or remedy the Complainant is seeking.</li>
+                        </ol>
+
+                        <p><strong class="text-slate-800 mt-6 block">6.3 Authenticity.</strong> A Grievance must not be false, frivolous, or made in bad faith. The Complainant must be either the affected person or a person duly authorised to act on their behalf, and must not misrepresent their identity. Signing of complaints (physically or electronically) may be required where the law so provides, for example in IP takedown requests.</p>
+                    </div>
+                </section>
+
+                <section id="section-7" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">7.</span> Grievance Handling Process
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">7.1</strong> Grievances are handled through the following stages:</p>
+                        
+                        <div class="relative border-l-2 border-brand-200 ml-3 md:ml-4 pl-6 md:pl-8 py-2 space-y-8 mt-6">
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">1</div>
+                                <h4 class="font-bold text-slate-900">Receipt & logging</h4>
+                                <p class="text-sm mt-1">The Grievance is received through a channel in Clause 6 and logged with a unique reference and a timestamp.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">2</div>
+                                <h4 class="font-bold text-slate-900">Acknowledgement</h4>
+                                <p class="text-sm mt-1">The Grievance Officer acknowledges receipt within the timeline in Clause 8, providing the reference number.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">3</div>
+                                <h4 class="font-bold text-slate-900">Review & investigation</h4>
+                                <p class="text-sm mt-1">The Grievance Officer reviews the complaint, gathers relevant information, and, where appropriate, seeks a response from the user or Seller concerned (for example, through the counter-notice process for IP complaints).</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">4</div>
+                                <h4 class="font-bold text-slate-900">Action</h4>
+                                <p class="text-sm mt-1">Based on the review, we take proportionate action, which may include removing or disabling Content, correcting or deleting data, processing a refund, issuing a warning, suspending or terminating an account, or informing the Complainant that no action is warranted with reasons.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">5</div>
+                                <h4 class="font-bold text-slate-900">Communication of outcome</h4>
+                                <p class="text-sm mt-1">The Complainant is informed of the outcome within the resolution timeline in Clause 8.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[35px] md:-left-[41px] bg-brand-100 text-brand-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-4 border-white shadow-sm">6</div>
+                                <h4 class="font-bold text-slate-900">Closure & record</h4>
+                                <p class="text-sm mt-1">The Grievance is marked closed and retained on record in accordance with Clause 11.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-8" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">8.</span> Timelines for Acknowledgement and Resolution
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">8.1</strong> Kreate Studio observes the following timelines. Where more than one applies to a Grievance, the shorter (more protective) timeline is followed.</p>
+                        
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm my-6">
+                            <table class="min-w-full divide-y divide-slate-200 text-sm">
+                                <thead class="bg-slate-50">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider">Type of Grievance</th>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider">Acknowledge</th>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider">Resolve / Dispose</th>
+                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-slate-900 uppercase tracking-wider">Basis</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 bg-white">
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900">General grievances (IT Rules)</td>
+                                        <td class="px-4 py-3 text-slate-600">Within 24 hours</td>
+                                        <td class="px-4 py-3 text-slate-600">Within 15 days</td>
+                                        <td class="px-4 py-3 text-slate-500 text-xs">Rule 3(2)(a), IT Rules, 2021</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900">Sensitive content <br><span class="font-normal text-xs text-slate-500">(e.g., exposing private area, nudity, impersonation)</span></td>
+                                        <td class="px-4 py-3 text-red-600 font-medium">On receipt</td>
+                                        <td class="px-4 py-3 text-red-600 font-medium">Within 24 hours</td>
+                                        <td class="px-4 py-3 text-slate-500 text-xs">Rule 3(2)(b), IT Rules, 2021</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900">Consumer / e-commerce complaints</td>
+                                        <td class="px-4 py-3 text-slate-600">Within 48 hours</td>
+                                        <td class="px-4 py-3 text-slate-600">Within 1 month</td>
+                                        <td class="px-4 py-3 text-slate-500 text-xs">Rule 4, CP (E-Commerce) Rules, 2020</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900">Intellectual-property (takedown)</td>
+                                        <td class="px-4 py-3 text-slate-600">Within 24–48 hours</td>
+                                        <td class="px-4 py-3 text-slate-600">Expeditiously; ordinarily within 15 days</td>
+                                        <td class="px-4 py-3 text-slate-500 text-xs">IT Rules, 2021 due diligence</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="px-4 py-3 font-medium text-slate-900">Data-protection / privacy (Data Principal)</td>
+                                        <td class="px-4 py-3 text-slate-600">Promptly</td>
+                                        <td class="px-4 py-3 text-slate-600">Within the period prescribed under the DPDP Act & Rules <span class="placeholder-field ml-1">[●]</span></td>
+                                        <td class="px-4 py-3 text-slate-500 text-xs">DPDP Act, 2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><strong class="text-slate-800">8.2</strong> Timelines run from the date and time a complete Grievance is received. Where a Grievance lacks essential information, we may request the missing details; the resolution period may be reasonably extended by the time taken by the Complainant to respond. Any extension and its reason will be communicated to the Complainant.</p>
+                        <p><strong class="text-slate-800">8.3</strong> The data-protection response period will be aligned to the period prescribed under the DPDP Act, 2023 and the rules made thereunder once finally notified; until then, we will respond as promptly as reasonably practicable.</p>
+                    </div>
+                </section>
+
+                <section id="section-9" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">9.</span> Specific Grievance Procedures
+                    </h2>
+                    <div class="space-y-5 text-slate-600">
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.1 Objectionable or unlawful content.</h4>
+                            <p class="mt-1">On a complaint that Content violates Rule 3(1)(b) of the IT Rules, 2021 or the Terms of Service, the Grievance Officer will review the Content and, where the complaint is valid, disable access to or remove it, and take account of the complaint history of the user concerned. On actual knowledge through a court order or notification by the appropriate government or its agency that Content is being used to commit an unlawful act, we will act expeditiously and in any event within the time permitted by law.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.2 Sensitive content (24-hour).</h4>
+                            <p class="mt-1">Where a Grievance relates to content in the nature described in Rule 3(2)(b) of the IT Rules, 2021 (broadly, content that exposes an individual's private area, shows nudity or a sexual act, or is in the nature of impersonation including artificially morphed images), we will take all reasonable and practicable measures to remove or disable access to such content within twenty-four (24) hours of receiving a valid complaint from the individual or a person acting on their behalf.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.3 Intellectual-property takedown and counter-notice.</h4>
+                            <p class="mt-1">A person alleging infringement of copyright or other IP rights should provide: (a) their name and contact details; (b) identification of the work claimed to be infringed; (c) identification and location of the allegedly infringing Content (e.g., Listing link/ID); (d) a good-faith statement that the use is not authorised; (e) a statement that the information is accurate and, under penalty of law, that they are the rights owner or authorised to act; and (f) their signature (physical or electronic). On a valid complaint, we may disable or remove the Content. The affected Seller may submit a counter-notice with evidence of their right to the Content, following which we may, at our discretion and where appropriate, restore the Content unless restoration is barred by law or a competent authority. Repeat infringers may be suspended or terminated.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.4 Consumer and transaction complaints.</h4>
+                            <p class="mt-1">Complaints about non-delivery, misdescription, or defective Creative Assets are assessed under the Terms of Service and the Refund & Cancellation Policy. Where a third-party Seller is involved, we will facilitate communication between the Buyer and Seller and, where warranted, coordinate a remedy such as replacement or refund. We do not adopt any unfair trade practice in handling such complaints.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.5 Payment and refund complaints.</h4>
+                            <p class="mt-1">For failed, duplicate, or incorrect transactions, or refund requests, we will verify the transaction with the Payment Aggregator/Gateway (e.g., Razorpay) and, where a refund is due, process it to the original payment method within the Gateway's standard timelines. Where the Seller is a third party, a refund may be effected against the Seller's proceeds.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">9.6 Data-protection and privacy grievances.</h4>
+                            <p class="mt-1">A Data Principal may raise a grievance regarding the processing of their personal data — including requests to access, correct, update, or erase data, to withdraw consent, or to nominate — through the Grievance Officer. We will respond in accordance with the DPDP Act, 2023, our Privacy Policy, and the timeline in Clause 8, subject to lawful retention requirements. A Data Principal must exhaust this Mechanism before approaching the Data Protection Board of India.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-10" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">10.</span> Escalation and Appeals
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">10.1</strong> If a Complainant is not satisfied with the decision of the Grievance Officer, or does not receive a response within the applicable timeline, the following escalation routes may be available, depending on the nature of the Grievance:</p>
+                        <ul class="list-disc pl-5 space-y-3 marker:text-brand-400">
+                            <li><strong class="text-slate-800">Grievance Appellate Committee (GAC).</strong> For grievances concerning the Grievance Officer's decision on Content or account action under the IT Rules, 2021, an appeal may be preferred to a Grievance Appellate Committee constituted by the Central Government, ordinarily within thirty (30) days of the Grievance Officer's decision, through the online portal notified for this purpose.</li>
+                            <li><strong class="text-slate-800">Consumer redressal forums.</strong> For consumer disputes, a Complainant may approach the District, State, or National Consumer Disputes Redressal Commission under the Consumer Protection Act, 2019, use the e-Daakhil portal, or contact the National Consumer Helpline (1915).</li>
+                            <li><strong class="text-slate-800">Data Protection Board of India.</strong> For data-protection grievances not satisfactorily resolved, a Data Principal may make a complaint to the Data Protection Board of India under the DPDP Act, 2023, after exhausting this Mechanism.</li>
+                            <li><strong class="text-slate-800">Courts and other authorities.</strong> A Complainant may pursue any other remedy available under law, including approaching the appropriate court or authority.</li>
+                        </ul>
+                        <p><strong class="text-slate-800 mt-4 block">10.2</strong> Details of the applicable escalation route, including any online portal or contact, will be provided by the Grievance Officer on request or together with the decision.</p>
+                    </div>
+                </section>
+
+                <section id="section-11" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">11.</span> Records, Confidentiality, and Data Handling
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">11.1</strong> We maintain records of Grievances received and actions taken, including the reference number, category, dates of receipt / acknowledgement / disposal, and outcome, for such period as is required to demonstrate compliance and as permitted under applicable law.</p>
+                        <p><strong class="text-slate-800">11.2</strong> Personal data collected in connection with a Grievance is processed in accordance with our Privacy Policy and the DPDP Act, 2023, and is used only for handling the Grievance, meeting legal obligations, and improving the Platform's safety.</p>
+                        <p><strong class="text-slate-800">11.3</strong> We handle Grievances with reasonable confidentiality; however, we may disclose relevant information to the user or Seller concerned (to enable a response), to service providers, or to authorities where required by law or to protect rights and safety. Consistent with our privacy commitments, we do not disclose the full list of users who have blocked a given person.</p>
+                    </div>
+                </section>
+
+                <section id="section-12" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">12.</span> Misuse of the Mechanism
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">12.1</strong> Submitting false, frivolous, vexatious, or bad-faith Grievances, or misusing the Report/Block tools to harass others, is itself a violation of the Terms of Service. We may decline to act on, or may deprioritise, such Grievances, and may take action against the account responsible, including warnings, suspension, or termination, without prejudice to any other remedy available to us or to affected persons under law.</p>
+                    </div>
+                </section>
+
+                <section id="section-13" class="fade-up mb-10 border-b border-slate-100 pb-8">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">13.</span> Review and Amendment
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">13.1</strong> We may review and amend this Mechanism from time to time to reflect changes in law, regulatory guidance, or our processes. The current version, with the “Last Updated” date, will be published on the Platform. Material changes will be notified through the Platform or by other reasonable means. Continued use of the Platform after changes take effect constitutes acknowledgement of the revised Mechanism.</p>
+                    </div>
+                </section>
+
+                <section id="section-14" class="fade-up mb-12">
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center group">
+                        <span class="text-brand-500 mr-3 opacity-50 group-hover:opacity-100 transition-opacity">14.</span> Contact Summary
+                    </h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p><strong class="text-slate-800">14.1</strong> For any Grievance or question about this Mechanism, please contact:</p>
+                        
+                        <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 my-6 shadow-sm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div class="space-y-1">
+                                    <span class="text-slate-500 block uppercase tracking-wider text-xs font-semibold">Grievance Officer</span>
+                                    <span class="font-medium text-slate-900"><span class="placeholder-field"> Mr. Ansh Bhardwaj</span>Founder, Kreate Studio</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <span class="text-slate-500 block uppercase tracking-wider text-xs font-semibold">Grievance Email</span>
+                                    <a href="mailto:workwithansh8@gmail.com" class="font-medium text-brand-600 hover:underline">workwithansh8@gmail.com</a>
+                                </div>
+                                <div class="space-y-1">
+                                    <span class="text-slate-500 block uppercase tracking-wider text-xs font-semibold">General Support</span>
+                                    <a href="mailto:workwithansh8@gmail.com" class="font-medium text-brand-600 hover:underline">workwithansh8@gmail.com</a>
+                                </div>
+                                <div class="space-y-1">
+                                    <span class="text-slate-500 block uppercase tracking-wider text-xs font-semibold">Working Hours</span>
+                                    <span class="font-medium text-slate-900"><span class="placeholder-field">Monday to Friday, 10:00 to 18:00 IST</span> </span>
+                                </div>
+                                <div class="space-y-1 md:col-span-2">
+                                    <span class="text-slate-500 block uppercase tracking-wider text-xs font-semibold">Postal Address</span>
+                                    <span class="font-medium text-slate-900"><span class="placeholder-field">Agra, Uttar Pradesh, India</span> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="border-t-2 border-dashed border-slate-200 my-12"></div>
+
+                <!-- Annexures -->
+                <section id="annexure-a" class="fade-up mb-10">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-4 bg-brand-50 inline-block px-4 py-1 rounded-md text-brand-800">Annexure A — Grievance Submission Template</h3>
+                    <p class="text-slate-600 mb-6 text-sm">A Complainant may use the following template when submitting a Grievance by email or post. Fields marked (required) should always be completed.</p>
+                    
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-inner font-mono text-sm text-slate-700 space-y-4">
+                        <div><strong class="text-slate-900">Complainant name:</strong> (required)</div>
+                        <div><strong class="text-slate-900">Email address:</strong> (required) / Postal address:</div>
+                        <div><strong class="text-slate-900">Are you the affected person, or acting on their behalf?</strong> (required)</div>
+                        <div><strong class="text-slate-900">Grievance category:</strong> (see Clause 5) (required)</div>
+                        <div><strong class="text-slate-900 block mb-1">Description of the grievance:</strong> (required) <br> <div class="w-full h-16 border border-slate-200 border-dashed rounded mt-1 bg-slate-50"></div></div>
+                        <div><strong class="text-slate-900">Relevant Listing link / ID, order / payment ID, or username:</strong></div>
+                        <div><strong class="text-slate-900">For IP complaints:</strong> identification of the work, ownership/authority statement, and signature</div>
+                        <div><strong class="text-slate-900">Supporting evidence:</strong> (attach screenshots / links / documents)</div>
+                        <div><strong class="text-slate-900">Outcome or remedy sought:</strong></div>
+                        <div><strong class="text-slate-900">Date:</strong></div>
+                    </div>
+                </section>
+
+                <section id="annexure-b" class="fade-up mb-8">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-4 bg-amber-50 inline-block px-4 py-1 rounded-md text-amber-800">Annexure B — Items to Finalise Before Publication</h3>
+                    <p class="text-slate-600 mb-4 text-sm font-medium italic">(For internal/legal review only - remove before public posting)</p>
+                    
+                    <ul class="list-disc pl-5 space-y-3 text-slate-600 text-sm marker:text-amber-500 bg-amber-50/30 p-5 rounded-xl border border-amber-100">
+                        <li>Grievance Officer's name, designation, dedicated grievance email, postal address, and working hours (Clause 4) — mandatory under the IT Rules, 2021 and the Consumer Protection (E-Commerce) Rules, 2020.</li>
+                        <li>Legal entity name and registered address, once the business entity is formed.</li>
+                        <li>Effective Date and Last Updated date.</li>
+                        <li>Confirm the data-protection response timeline (Clause 8) against the DPDP Rules once finally notified.</li>
+                        <li>Confirm the current Grievance Appellate Committee portal/contact details before publishing the escalation route (Clause 10).</li>
+                        <li>Ensure consistency with the Terms of Service, Privacy Policy, Seller Agreement, and Refund & Cancellation Policy, and that described controls match the live Platform configuration.</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="currentYear"></span> Kreate Studio. All rights reserved.</p>
+            <p class="mt-2 text-slate-500">This document is subject to Indian Law.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Intersection Observer for scroll animations (fade-up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Mobile TOC logic & Active state tracking
+        const desktopToc = document.getElementById('desktop-toc');
+        const mobileToc = document.getElementById('mobile-toc');
+        
+        // Clone desktop TOC links to mobile TOC
+        if(desktopToc && mobileToc) {
+            mobileToc.innerHTML = desktopToc.innerHTML;
+            
+            // Add click listener to close mobile menu on click
+            mobileToc.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToc.classList.add('hidden');
+                });
+            });
+        }
+
+        // Highlight active TOC link based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Offset calculation to trigger a bit before the section hits the very top
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current) && current !== '') {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
