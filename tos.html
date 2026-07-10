@@ -1,351 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — Kreate Studio</title>
 <meta name="description" content="Terms of Service for Kreate Studio, India's creative assets marketplace.">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<script>(function(){try{var t=localStorage.getItem('kreate-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#1A1A2E;
-    --purple:#5B2A86;
-    --purple-soft:#7B4BA8;
-    --lav:#F2EEF7;
-    --lav-line:#E4DAF0;
-    --paper:#FCFBFD;
-    --grey:#43424A;
-    --grey-soft:#6E6C78;
-    --hair:#E7E4EE;
-    --amber-bg:#FBF3E4;
-    --amber-line:#E8C98A;
-    --maxw:1180px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--grey);
-    font-family:"Newsreader",Georgia,serif;
-    font-size:18px;
-    line-height:1.72;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  a{color:var(--purple);text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  :focus-visible{outline:2.5px solid var(--purple);outline-offset:3px;border-radius:2px;}
-
-  /* ---------- Masthead ---------- */
-  .masthead{
-    background:var(--ink);
-    color:#fff;
-    padding:0;
-    border-bottom:4px solid var(--purple);
-  }
-  .mast-inner{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:54px 32px 46px;
-  }
-  .brand{
-    font-family:"Space Grotesk",sans-serif;
-    font-weight:700;
-    letter-spacing:-0.02em;
-    font-size:clamp(28px,5vw,42px);
-    color:#fff;
-    line-height:1;
-    display:flex;align-items:center;gap:14px;
-  }
-  .brand .dot{
-    width:14px;height:14px;border-radius:50%;
-    background:var(--purple-soft);
-    box-shadow:0 0 0 5px rgba(123,75,168,.25);
-    flex:none;
-  }
-  .brand small{
-    font-family:"Newsreader",serif;
-    font-weight:400;font-style:italic;
-    font-size:16px;color:#B9B4C7;letter-spacing:0;
-    margin-left:2px;
-  }
-  .doc-title{
-    font-family:"Space Grotesk",sans-serif;
-    font-weight:600;
-    font-size:clamp(30px,6vw,54px);
-    letter-spacing:-0.02em;
-    margin:26px 0 6px;
-    color:#fff;line-height:1.02;
-  }
-  .doc-sub{color:#B9B4C7;font-size:17px;margin:0 0 22px;}
-  .meta-row{
-    display:flex;flex-wrap:wrap;gap:10px 26px;
-    font-family:"Space Grotesk",sans-serif;
-    font-size:13px;letter-spacing:.02em;color:#CFCADB;
-  }
-  .meta-row span b{color:#fff;font-weight:500;}
-
-  /* ---------- Layout ---------- */
-  .wrap{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 32px;
-    display:grid;
-    grid-template-columns:270px 1fr;
-    gap:56px;
-    align-items:start;
-  }
-
-  /* ---------- Sidebar TOC ---------- */
-  .toc{
-    position:sticky;top:24px;
-    align-self:start;
-    padding:34px 0 40px;
-    max-height:calc(100vh - 40px);
-    overflow-y:auto;
-  }
-  .toc h2{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:12px;font-weight:600;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--grey-soft);
-    margin:0 0 14px;
-  }
-  .toc ol{list-style:none;margin:0;padding:0;counter-reset:toc;}
-  .toc li{margin:0;}
-  .toc a{
-    display:flex;gap:10px;align-items:baseline;
-    font-family:"Space Grotesk",sans-serif;
-    font-size:13.5px;line-height:1.35;
-    color:var(--grey-soft);
-    padding:6px 10px 6px 8px;
-    border-left:2px solid transparent;
-    border-radius:0 5px 5px 0;
-    transition:color .15s,background .15s,border-color .15s;
-  }
-  .toc a .num{
-    font-variant-numeric:tabular-nums;
-    color:var(--lav-line);font-weight:600;
-    min-width:20px;text-align:right;flex:none;
-  }
-  .toc a:hover{color:var(--ink);text-decoration:none;background:var(--lav);}
-  .toc a.active{
-    color:var(--purple);font-weight:600;
-    border-left-color:var(--purple);
-    background:var(--lav);
-  }
-  .toc a.active .num{color:var(--purple);}
-
-  /* ---------- Content ---------- */
-  .content{padding:40px 0 90px;max-width:760px;}
-
-  .notice{
-    background:var(--amber-bg);
-    border:1px solid var(--amber-line);
-    border-left:4px solid #C98A2E;
-    border-radius:8px;
-    padding:18px 22px;
-    margin:0 0 40px;
-    font-size:16px;line-height:1.6;color:#6b5426;
-  }
-  .notice strong{color:#7a3d00;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:5px;}
-
-  section{scroll-margin-top:20px;padding-top:14px;}
-  section h2.sec{
-    font-family:"Space Grotesk",sans-serif;
-    font-weight:600;letter-spacing:-0.015em;
-    font-size:26px;color:var(--ink);
-    margin:38px 0 4px;
-    display:flex;align-items:baseline;gap:14px;
-  }
-  section h2.sec .snum{
-    font-size:15px;color:var(--purple);
-    font-variant-numeric:tabular-nums;font-weight:700;
-    background:var(--lav);
-    padding:3px 9px;border-radius:6px;flex:none;
-    letter-spacing:0;
-  }
-  .sec-rule{height:2px;background:linear-gradient(90deg,var(--lav-line),transparent);margin:10px 0 20px;border:0;}
-
-  .content p{margin:0 0 15px;}
-  .content p .n{font-family:"Space Grotesk",sans-serif;font-weight:600;color:var(--ink);font-size:15px;margin-right:3px;font-variant-numeric:tabular-nums;}
-  .content p .lead{color:var(--ink);font-weight:600;}
-  .content strong{color:var(--ink);font-weight:600;}
-  .ph{background:var(--lav);color:var(--purple);font-family:"Space Grotesk",sans-serif;font-size:.86em;padding:0 5px;border-radius:4px;font-weight:500;}
-  .note-inline{color:var(--purple-soft);font-style:italic;}
-
-  ul.pl{margin:2px 0 16px;padding:0;list-style:none;}
-  ul.pl li{position:relative;padding:4px 0 4px 26px;margin:0;}
-  ul.pl li::before{content:"";position:absolute;left:6px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--purple-soft);}
-
-  /* ---------- Tables ---------- */
-  .tbl{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:15.5px;font-family:"Space Grotesk",sans-serif;}
-  .tbl th,.tbl td{text-align:left;vertical-align:top;padding:11px 16px;border-bottom:1px solid var(--hair);}
-  .tbl th{color:var(--ink);font-weight:600;width:34%;}
-  .tbl td{color:var(--grey);}
-  .tbl tr:nth-child(even) th,.tbl tr:nth-child(even) td{background:var(--lav);}
-  .tbl caption{caption-side:top;text-align:left;font-family:"Space Grotesk",sans-serif;font-size:13px;color:var(--grey-soft);margin-bottom:8px;}
-
-  .grievance{
-    background:var(--lav);
-    border:1px solid var(--lav-line);
-    border-radius:10px;padding:6px 22px 14px;margin:14px 0 20px;
-  }
-  .grievance .tbl th{width:38%;}
-  .grievance .tbl tr:last-child th,.grievance .tbl tr:last-child td{border-bottom:0;}
-  .grievance .tbl tr:nth-child(even) th,.grievance .tbl tr:nth-child(even) td{background:transparent;}
-
-  .ack{
-    margin-top:40px;padding:22px 26px;
-    border:1px dashed var(--purple-soft);
-    border-radius:10px;background:#fff;
-    font-size:16px;
-  }
-  .ack strong{font-family:"Space Grotesk",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:6px;}
-
-  .annex{margin-top:56px;padding-top:8px;border-top:2px solid var(--lav-line);}
-
-  /* ---------- Footer ---------- */
-  footer{
-    background:var(--ink);color:#B9B4C7;
-    margin-top:0;padding:40px 32px;
-    font-family:"Space Grotesk",sans-serif;font-size:13.5px;
-  }
-  footer .fi{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
-  footer a{color:#D9CFEC;}
-  footer .fbrand{font-weight:700;color:#fff;letter-spacing:-0.01em;}
-
-  /* ---------- Top progress + back to top ---------- */
-  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--purple);z-index:60;transition:width .1s linear;}
-  #toTop{
-    position:fixed;right:22px;bottom:22px;z-index:50;
-    width:46px;height:46px;border-radius:50%;
-    background:var(--purple);color:#fff;border:0;cursor:pointer;
-    font-size:20px;line-height:1;display:none;place-items:center;
-    box-shadow:0 6px 20px rgba(91,42,134,.35);
-  }
-  #toTop.show{display:grid;}
-  #toTop:hover{background:var(--purple-soft);}
-
-  /* ---------- Mobile TOC toggle ---------- */
-  .toc-toggle{display:none;}
-
-  @media (max-width:920px){
-    body{font-size:17px;}
-    .wrap{grid-template-columns:1fr;gap:0;padding:0 22px;}
-    .mast-inner{padding:40px 22px 34px;}
-    .toc{
-      position:static;max-height:none;padding:18px 0 0;
-      border-bottom:1px solid var(--hair);
-    }
-    .toc-toggle{
-      display:flex;align-items:center;justify-content:space-between;
-      width:100%;background:var(--lav);border:1px solid var(--lav-line);
-      color:var(--ink);font-family:"Space Grotesk",sans-serif;font-weight:600;
-      font-size:14px;padding:13px 16px;border-radius:8px;cursor:pointer;margin:18px 0 0;
-    }
-    .toc-toggle::after{content:"▾";color:var(--purple);transition:transform .2s;}
-    .toc.open .toc-toggle::after{transform:rotate(180deg);}
-    .toc ol{display:none;margin-top:12px;}
-    .toc.open ol{display:block;}
-    .toc h2{display:none;}
-    .content{padding:26px 0 70px;max-width:none;}
-    section h2.sec{font-size:22px;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div id="progress"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="progressBar" aria-hidden="true"></div>
 
-<header class="masthead">
-  <div class="mast-inner">
-    <div class="brand"><span class="dot"></span>Kreate&nbsp;Studio <small>India's Creative Assets Marketplace</small></div>
-    <h1 class="doc-title">Terms of Service</h1>
-    <p class="doc-sub">Terms of Use · User Agreement</p>
-    <div class="meta-row">
-      <span>Effective&nbsp;Date: <b>02 July 2026</b></span>
-      <span>Last&nbsp;Updated: <b>02 July 2026</b></span>
-      <span>Version: <b>1.0</b></span>
-      <span>Jurisdiction: <b>India</b></span>
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="Kreate Studio" class="brand__mark">
+      <span class="brand__word">Kreate <span class="brand__word-light">Studio</span></span>
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Legal documents">
+      <a href="index.html" class="site-nav__link">Privacy Policy</a>
+      <a href="tos.html" class="site-nav__link is-active" aria-current="page">Terms of Service</a>
+      <a href="seller-policy.html" class="site-nav__link">Seller Policy</a>
+      <a href="refund-policy.html" class="site-nav__link">Refund Policy</a>
+      <a href="grievance.html" class="site-nav__link">Grievance Redressal</a>
+    </nav>
+    <div class="site-header__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
     </div>
   </div>
 </header>
 
-<div class="wrap">
-  <!-- ===== Sidebar TOC ===== -->
+<header class="doc-hero">
+  <div class="doc-hero__inner">
+    <p class="eyebrow">Legal · Terms of Use</p>
+    <h1>Terms of Service</h1>
+    <p class="lede">The agreement between you and Kreate Studio governing access to and use of the mobile application, website and related services.</p>
+    <div class="chips">
+      <span class="chip">Effective <b>10 July 2026</b></span>
+      <span class="chip">Last updated <b>10 July 2026</b></span>
+      <span class="chip">Version <b>1.0</b></span>
+      <span class="chip">Jurisdiction <b>India</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="callout-wrap">
+  <div class="callout">
+    <span class="tag">Template · for review</span>
+    <p>This is a working draft prepared to a good standard of Indian legal practice for a marketplace intermediary, but it is not a substitute for legal advice. Fields marked <span class="ph">[●]</span> must be completed, and the document should be reviewed by a qualified Indian advocate before publication or launch — in particular the legal entity name and structure, which is not yet finalised.</p>
+  </div>
+</div>
+
+<div class="doc-shell">
   <nav class="toc" id="toc" aria-label="Table of contents">
-    <button class="toc-toggle" id="tocToggle" aria-expanded="false">On this page</button>
-    <h2>On this page</h2>
-    <ol id="tocList">
-      <li><a href="#s1"><span class="num">1</span>Introduction &amp; Acceptance</a></li>
-      <li><a href="#s2"><span class="num">2</span>Definitions</a></li>
-      <li><a href="#s3"><span class="num">3</span>Nature of the Platform</a></li>
-      <li><a href="#s4"><span class="num">4</span>Eligibility</a></li>
-      <li><a href="#s5"><span class="num">5</span>Account &amp; Security</a></li>
-      <li><a href="#s6"><span class="num">6</span>Acceptable Use</a></li>
-      <li><a href="#s7"><span class="num">7</span>Listings &amp; Moderation</a></li>
-      <li><a href="#s8"><span class="num">8</span>Intellectual Property</a></li>
-      <li><a href="#s9"><span class="num">9</span>Payments &amp; Settlement</a></li>
-      <li><a href="#s10"><span class="num">10</span>Refunds &amp; Cancellations</a></li>
-      <li><a href="#s11"><span class="num">11</span>Reporting &amp; Blocking</a></li>
-      <li><a href="#s12"><span class="num">12</span>Copyright Takedown</a></li>
-      <li><a href="#s13"><span class="num">13</span>Intermediary Safe Harbour</a></li>
-      <li><a href="#s14"><span class="num">14</span>Privacy &amp; Data</a></li>
-      <li><a href="#s15"><span class="num">15</span>Disclaimers</a></li>
-      <li><a href="#s16"><span class="num">16</span>Liability &amp; Indemnity</a></li>
-      <li><a href="#s17"><span class="num">17</span>Suspension &amp; Termination</a></li>
-      <li><a href="#s18"><span class="num">18</span>Grievance &amp; Contact</a></li>
-      <li><a href="#s19"><span class="num">19</span>Governing Law</a></li>
-      <li><a href="#s20"><span class="num">20</span>Force Majeure</a></li>
-      <li><a href="#s21"><span class="num">21</span>Changes to Terms</a></li>
-      <li><a href="#s22"><span class="num">22</span>Miscellaneous</a></li>
-      <li><a href="#annex"><span class="num">A</span>Annexure — To Finalise</a></li>
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false">Contents · 22 sections <span class="arw">▾</span></button>
+    <p class="toc-label">Contents</p>
+    <ol>
+      <li><a href="#s1"><span class="n">01</span>Introduction &amp; Acceptance</a></li>
+      <li><a href="#s2"><span class="n">02</span>Definitions</a></li>
+      <li><a href="#s3"><span class="n">03</span>Nature of the Platform</a></li>
+      <li><a href="#s4"><span class="n">04</span>Eligibility</a></li>
+      <li><a href="#s5"><span class="n">05</span>Account &amp; Security</a></li>
+      <li><a href="#s6"><span class="n">06</span>Acceptable Use</a></li>
+      <li><a href="#s7"><span class="n">07</span>Listings &amp; Moderation</a></li>
+      <li><a href="#s8"><span class="n">08</span>Intellectual Property</a></li>
+      <li><a href="#s9"><span class="n">09</span>Payments &amp; Settlement</a></li>
+      <li><a href="#s10"><span class="n">10</span>Refunds &amp; Cancellations</a></li>
+      <li><a href="#s11"><span class="n">11</span>Reporting &amp; Blocking</a></li>
+      <li><a href="#s12"><span class="n">12</span>Copyright Takedown</a></li>
+      <li><a href="#s13"><span class="n">13</span>Intermediary Safe Harbour</a></li>
+      <li><a href="#s14"><span class="n">14</span>Privacy &amp; Data</a></li>
+      <li><a href="#s15"><span class="n">15</span>Disclaimers</a></li>
+      <li><a href="#s16"><span class="n">16</span>Liability &amp; Indemnity</a></li>
+      <li><a href="#s17"><span class="n">17</span>Suspension &amp; Termination</a></li>
+      <li><a href="#s18"><span class="n">18</span>Grievance &amp; Contact</a></li>
+      <li><a href="#s19"><span class="n">19</span>Governing Law</a></li>
+      <li><a href="#s20"><span class="n">20</span>Force Majeure</a></li>
+      <li><a href="#s21"><span class="n">21</span>Changes to Terms</a></li>
+      <li><a href="#s22"><span class="n">22</span>Miscellaneous</a></li>
+      <li><a href="#annex"><span class="n">A</span>Annexure — Open Items</a></li>
     </ol>
   </nav>
 
-  <!-- ===== Document body ===== -->
-  <main class="content">
-    <div class="notice">
-      <strong>Template notice</strong>
-      This is a working draft prepared to a good standard of Indian legal practice for a marketplace intermediary, but it is not a substitute for legal advice. Fields marked <span class="ph">[●]</span> must be completed, and the document should be reviewed by a qualified Indian advocate before publication or launch — in particular the entity name, payment flow (Clause 9), refund policy, and grievance officer details, which depend on decisions not yet finalised.
-    </div>
+  <main class="doc-content" id="main">
 
-    <section id="s1">
-      <h2 class="sec"><span class="snum">1</span>Introduction and Acceptance of These Terms</h2>
-      <hr class="sec-rule">
+    <section id="s1" class="clause">
+      <div class="sec-head"><span class="num">01</span><h2>Introduction and Acceptance of These Terms</h2></div>
       <p><span class="n">1.1</span> These Terms of Service (“<strong>Terms</strong>” or “<strong>Agreement</strong>”) govern your access to and use of the “Kreate Studio” mobile application, website, and related services (together, the “<strong>Platform</strong>”), which is owned and operated by <span class="ph">Kreate Studio</span>, a <span class="ph">sole proprietorship</span> organised under the laws of India, having its registered/principal place of business at <span class="ph">Agra, Uttar Pradesh, India</span> (“<strong>Kreate Studio</strong>”, “<strong>we</strong>”, “<strong>us</strong>” or “<strong>our</strong>”).</p>
       <p><span class="n">1.2</span> These Terms constitute a legally binding electronic agreement between you and Kreate Studio. They are an electronic record under the <strong>Information Technology Act, 2000</strong> and the rules made thereunder, and under the <strong>Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</strong> (“<strong>IT Rules, 2021</strong>”). This electronic record is generated by a computer system and does not require any physical or digital signature.</p>
       <p><span class="n">1.3</span> By downloading, installing, registering on, accessing or using the Platform, or by clicking “I Agree”, “Sign Up”, or a similar button, you acknowledge that you have read, understood and agree to be bound by these Terms, our <strong>Privacy Policy</strong>, our <strong>Seller Policy / Seller Agreement</strong>, our <strong>Refund and Cancellation Policy</strong>, and any other policy referenced herein, each of which is incorporated into these Terms by reference. If you do not agree with any part of these Terms, you must not access or use the Platform.</p>
       <p><span class="n">1.4</span> These Terms are published in accordance with Rule 3(1)(a) of the IT Rules, 2021, and with the provisions of the <strong>Consumer Protection Act, 2019</strong> and the <strong>Consumer Protection (E-Commerce) Rules, 2020</strong>.</p>
-      <p><span class="n">1.5</span> We may amend these Terms from time to time in accordance with Clause 21. Your continued use of the Platform after any amendment constitutes acceptance of the amended Terms.</p>    
+      <p><span class="n">1.5</span> We may amend these Terms from time to time in accordance with Clause 21. Your continued use of the Platform after any amendment constitutes acceptance of the amended Terms.</p>
     </section>
 
-    <section id="s2">
-      <h2 class="sec"><span class="snum">2</span>Definitions and Interpretation</h2>
-      <hr class="sec-rule">
+    <section id="s2" class="clause">
+      <div class="sec-head"><span class="num">02</span><h2>Definitions and Interpretation</h2></div>
       <p><span class="n">2.1</span> In these Terms, unless the context otherwise requires, the following words have the meanings set out below:</p>
-      <table class="tbl">
+      <div class="twrap"><table>
         <tbody>
           <tr><th>“Buyer”</th><td>A User who browses, purchases, or downloads Creative Assets on the Platform.</td></tr>
+          <tr><th>“Buyer Service Fee”</th><td>The fee of 12.5% of the listed price, charged to a Buyer at checkout in addition to the listed price, as described in Clause 9.3.</td></tr>
           <tr><th>“Content”</th><td>Any text, data, images, previews, files, descriptions, metadata, reviews, ratings, or other material uploaded, transmitted, or displayed on the Platform.</td></tr>
           <tr><th>“Creative Asset” / “Digital Product”</th><td>A digital project file or creative resource listed for sale — including LUTs, UI kits, Flutter/Figma/Premiere Pro templates, motion graphics, logo kits, audio packs, Reels templates, and similar digital goods.</td></tr>
           <tr><th>“Grievance Officer”</th><td>The officer appointed under the IT Rules, 2021 and the Consumer Protection (E-Commerce) Rules, 2020, whose details appear in Clause 18.</td></tr>
           <tr><th>“Intermediary”</th><td>Has the meaning under Section 2(1)(w) of the Information Technology Act, 2000; Kreate Studio acts as an intermediary for third-party Content and listings.</td></tr>
           <tr><th>“Listing”</th><td>An offer to sell a Creative Asset created by a Seller, together with its previews, description, price, and metadata.</td></tr>
           <tr><th>“Payment Gateway / Aggregator”</th><td>The third-party payment service provider(s) (e.g., Razorpay) used to process payments on the Platform.</td></tr>
+          <tr><th>“Platform Fee”</th><td>The commission of 10% of the listed price, charged to a Seller and deducted from their proceeds on each sale, as described in Clause 9.4 and the Seller Policy.</td></tr>
           <tr><th>“Seller”</th><td>A User who lists, offers, or sells Creative Assets on the Platform, whether the founder’s own assets or third-party assets.</td></tr>
           <tr><th>“User” / “you”</th><td>Any person who accesses or uses the Platform, whether as a Buyer, a Seller, or a visitor.</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p><span class="lead">2.2 Interpretation.</span> Headings are for convenience only. The singular includes the plural and vice versa. “Including” means “including without limitation”. References to statutes include amendments, re-enactments, and rules made thereunder. “In writing” includes electronic communication.</p>
     </section>
 
-    <section id="s3">
-      <h2 class="sec"><span class="snum">3</span>Nature of the Platform and Intermediary Status</h2>
-      <hr class="sec-rule">
+    <section id="s3" class="clause">
+      <div class="sec-head"><span class="num">03</span><h2>Nature of the Platform and Intermediary Status</h2></div>
       <p><span class="n">3.1</span> Kreate Studio operates an online marketplace that enables independent creators (Sellers) to list and sell Creative Assets to Buyers. The Platform is a venue and technology service that facilitates transactions between Buyers and Sellers.</p>
       <p><span class="lead">3.2 Intermediary.</span> In respect of Content and Listings uploaded by third-party Sellers, Kreate Studio acts as an “intermediary” within the meaning of Section 2(1)(w) of the Information Technology Act, 2000, and observes the due-diligence obligations of an intermediary under the IT Rules, 2021.</p>
       <p><span class="lead">3.3 Not a party to Buyer–Seller contracts.</span> Except where Kreate Studio itself is the Seller of its own Creative Assets, the contract of sale for any Creative Asset is concluded directly between the Buyer and the relevant Seller. Kreate Studio is not a party to that contract, is not the seller, manufacturer, or author of third-party Creative Assets, and does not warrant the quality, legality, originality, or fitness of any third-party Creative Asset.</p>
@@ -353,27 +134,24 @@
       <p><span class="lead">3.5 Launch stage.</span> You acknowledge the Platform is in an early/launch stage. At launch, the Creative Assets available may consist substantially or wholly of the founder’s own assets. Third-party paid Sellers, split-settlement payments, and certain features may be introduced progressively.</p>
     </section>
 
-    <section id="s4">
-      <h2 class="sec"><span class="snum">4</span>Eligibility</h2>
-      <hr class="sec-rule">
+    <section id="s4" class="clause">
+      <div class="sec-head"><span class="num">04</span><h2>Eligibility</h2></div>
       <p><span class="n">4.1</span> To use the Platform, you must be able to form a legally binding contract under the <strong>Indian Contract Act, 1872</strong>. You represent that you are at least 18 years of age and competent to contract.</p>
       <p><span class="lead">4.2 Minors.</span> The Platform is not intended for persons below 18. A minor may use it only through, and under the supervision of, a parent or legal guardian who agrees to these Terms. Any processing of a minor’s personal data will be handled in accordance with the <strong>Digital Personal Data Protection Act, 2023</strong> and our Privacy Policy, including verifiable parental consent where required.</p>
       <p><span class="n">4.3</span> If you use the Platform on behalf of a business or entity, you represent you are authorised to bind that entity to these Terms.</p>
       <p><span class="n">4.4</span> You must not use the Platform if barred under any applicable law, or if your access has previously been suspended or terminated by us.</p>
     </section>
 
-    <section id="s5">
-      <h2 class="sec"><span class="snum">5</span>Account Registration and Security</h2>
-      <hr class="sec-rule">
+    <section id="s5" class="clause">
+      <div class="sec-head"><span class="num">05</span><h2>Account Registration and Security</h2></div>
       <p><span class="n">5.1</span> To access certain features you must register using a valid email and/or Google Sign-In and provide accurate, current, and complete information. You may hold Buyer and/or Seller roles as offered.</p>
       <p><span class="n">5.2</span> You are responsible for the confidentiality of your credentials and for all activity under your account. Notify us immediately of any unauthorised use or security breach.</p>
       <p><span class="n">5.3</span> Keep your account information up to date. We may refuse registration, or suspend or cancel an account, where information is false, misleading, or in breach of these Terms.</p>
       <p><span class="n">5.4</span> You must not create an account using another person’s identity, impersonate any person, or maintain multiple accounts for abusive purposes.</p>
     </section>
 
-    <section id="s6">
-      <h2 class="sec"><span class="snum">6</span>Acceptable Use and Prohibited Conduct</h2>
-      <hr class="sec-rule">
+    <section id="s6" class="clause">
+      <div class="sec-head"><span class="num">06</span><h2>Acceptable Use and Prohibited Conduct</h2></div>
       <p><span class="n">6.1</span> You agree to use the Platform only for lawful purposes. In compliance with Rule 3(1)(b) of the IT Rules, 2021, you will not host, display, upload, publish, transmit, store, update, or share any information or Content that:</p>
       <ul class="pl">
         <li>belongs to another person and to which you do not have any right;</li>
@@ -391,9 +169,8 @@
       <p><span class="n">6.3</span> Breach of this Clause may result in removal of Content, suspension or termination of your account, forfeiture of pending payouts to the extent permitted by law, and referral to law-enforcement where appropriate.</p>
     </section>
 
-    <section id="s7">
-      <h2 class="sec"><span class="snum">7</span>Listings, Seller Obligations, and Moderation</h2>
-      <hr class="sec-rule">
+    <section id="s7" class="clause">
+      <div class="sec-head"><span class="num">07</span><h2>Listings, Seller Obligations, and Moderation</h2></div>
       <p><span class="lead">7.1 Seller Agreement.</span> Sellers are additionally bound by the Seller Policy / Seller Agreement, which forms part of these Terms. In case of conflict regarding selling activity, the Seller Agreement prevails to the extent of the conflict.</p>
       <p><span class="lead">7.2 Seller warranties.</span> By creating a Listing, a Seller warrants that: (a) they own or are authorised to sell the Creative Asset and its IP; (b) it does not infringe any third party’s rights; (c) the Listing is accurate and lawful; (d) it contains no malware or unlawful content; and (e) they will honour the stated price, description, and licence.</p>
       <p><span class="lead">7.3 Admin approval.</span> New Listings enter a manual admin approval queue and remain “pending” until approved or rejected. Edits to a Listing’s images or files trigger re-review; certain text or price edits may apply immediately. Approval is a moderation measure only and is not an endorsement, certification, or warranty, nor does it transfer liability from the Seller to Kreate Studio.</p>
@@ -402,9 +179,8 @@
       <p><span class="lead">7.6 Pricing and taxes.</span> Sellers set prices in Indian Rupees and are responsible for the accuracy of tax representations and for their own tax obligations, subject to any tax collection or deduction Kreate Studio is required by law to make (Clause 9.6).</p>
     </section>
 
-    <section id="s8">
-      <h2 class="sec"><span class="snum">8</span>Intellectual Property and Licences</h2>
-      <hr class="sec-rule">
+    <section id="s8" class="clause">
+      <div class="sec-head"><span class="num">08</span><h2>Intellectual Property and Licences</h2></div>
       <p><span class="lead">8.1 Platform IP.</span> All rights in the Platform — its software, design, “Kreate Studio” name and logo, and associated IP (other than User Content and third-party Creative Assets) — are owned by or licensed to Kreate Studio and protected under the Copyright Act, 1957, the Trade Marks Act, 1999, and other laws. No rights are granted except as expressly set out here.</p>
       <p><span class="lead">8.2 User Content ownership.</span> Sellers retain ownership of the IP in Creative Assets and Content they upload, subject to the licence below.</p>
       <p><span class="lead">8.3 Licence to Kreate Studio.</span> By uploading Content or a Creative Asset, you grant Kreate Studio a non-exclusive, worldwide, royalty-free, sub-licensable licence to host, store, reproduce, display, cache, adapt (for formatting/preview), and communicate the Content and previews to the public, solely to operate, promote, and provide the Platform. This subsists while the Content is on the Platform and for a reasonable period thereafter for backup, legal, and record-keeping purposes.</p>
@@ -412,128 +188,112 @@
       <p><span class="lead">8.5 Feedback.</span> If you provide suggestions about the Platform, you grant us a perpetual, irrevocable, royalty-free licence to use it without restriction or compensation.</p>
     </section>
 
-    <section id="s9">
-      <h2 class="sec"><span class="snum">9</span>Payments, Pricing, and Settlement</h2>
-      <hr class="sec-rule">
-      <p><span class="lead">9.1 Currency.</span> All prices are listed and payable in Indian Rupees (₹). The price displayed at purchase, plus applicable taxes and fees, is the amount payable.</p>
+    <section id="s9" class="clause">
+      <div class="sec-head"><span class="num">09</span><h2>Payments, Pricing, and Settlement</h2></div>
+      <p><span class="lead">9.1 Currency.</span> All prices are listed and payable in Indian Rupees (₹). The price displayed at purchase, plus the Buyer Service Fee and any applicable taxes, is the total amount payable.</p>
       <p><span class="lead">9.2 Payment processing.</span> Payments are processed through third-party Payment Aggregator(s)/Gateway(s) such as Razorpay, regulated under the RBI’s Payment Aggregator framework, and subject to that provider’s terms. Kreate Studio does not store your full card, UPI credential, or banking authentication details.</p>
-      <p><span class="lead">9.3 Platform fee.</span> Kreate Studio may charge a commission or platform fee on sales, as disclosed on the Platform or in the Seller Agreement, before a Seller lists or a Buyer purchases.</p>
-      <p><span class="lead">9.4 Settlement.</span> Where third-party Sellers are onboarded, settlement is intended to be effected through the Payment Aggregator’s split-settlement facility (e.g., Razorpay Route), so that proceeds route to the Seller’s own account and Kreate Studio does not pool or hold Seller funds. Availability and timing are subject to the Aggregator’s systems and RBI regulations.</p>
-      <p><span class="lead">9.5 Launch-stage flow.</span> At launch, and until split-settlement onboarding is enabled, the Creative Assets sold may be Kreate Studio’s own assets. <span class="note-inline">[Note for legal review: the precise launch-time flow — whether Kreate Studio sells only its own assets, or collects and passes through third-party seller funds — has regulatory consequences under the RBI Payment Aggregator framework and must be confirmed here before launch.]</span></p>
+      <p><span class="lead">9.3 Buyer Service Fee.</span> In addition to the listed price of a Creative Asset, Kreate Studio charges the Buyer a <strong>Buyer Service Fee of 12.5% of the listed price</strong> at checkout, to cover payment-processing, platform, and support costs. The Buyer Service Fee is displayed before checkout is confirmed, forms part of the total amount payable, and — save as set out in our Refund and Cancellation Policy — is non-refundable.</p>
+      <p><span class="lead">9.4 Platform Fee.</span> Kreate Studio charges each Seller a <strong>Platform Fee of 10% of the listed price</strong> on every successful sale, retained as commission and deducted from the Seller’s proceeds before settlement, as set out in the Seller Policy. The Buyer Service Fee and the Platform Fee are separate charges: the former is paid by the Buyer on top of the listed price, the latter is borne by the Seller out of the listed price, and neither offsets the other.</p>
+      <p><span class="lead">9.5 Settlement.</span> Where third-party Sellers are onboarded, settlement is intended to be effected through the Payment Aggregator’s split-settlement facility (e.g., Razorpay Route), so that proceeds route to the Seller’s own account and Kreate Studio does not pool or hold Seller funds. Availability and timing are subject to the Aggregator’s systems and RBI regulations.</p>
       <p><span class="lead">9.6 Taxes.</span> Prices may be inclusive or exclusive of GST as indicated. Kreate Studio will comply with its obligations as an e-commerce operator, including GST registration and, where applicable, Tax Collected at Source (TCS) under Section 52 of the CGST Act, 2017 and Tax Deducted at Source (TDS) under Section 194-O of the Income-tax Act, 1961, for facilitated third-party sales. Users are responsible for their own tax filings.</p>
       <p><span class="lead">9.7 Failed / duplicate transactions.</span> If a payment fails or is duplicated, or an amount is debited without an order confirmation, the captured amount (if any) will be reversed to the original payment method per the Gateway’s standard timelines.</p>
     </section>
 
-    <section id="s10">
-      <h2 class="sec"><span class="snum">10</span>Refunds, Cancellations, and Digital Delivery</h2>
-      <hr class="sec-rule">
+    <section id="s10" class="clause">
+      <div class="sec-head"><span class="num">10</span><h2>Refunds, Cancellations, and Digital Delivery</h2></div>
       <p><span class="lead">10.1 Digital goods.</span> Creative Assets are delivered by electronic download. Because they can be copied upon download, all sales are generally final and non-refundable once accessed or downloaded, save as in Clause 10.2 and our separate Refund and Cancellation Policy.</p>
-      <p><span class="lead">10.2 When refunds may be considered.</span> Consistent with the Consumer Protection Act, 2019, a refund, replacement, or other remedy may be provided where a Creative Asset: (a) is not delivered or cannot be downloaded due to a Platform/Seller fault; (b) is materially not as described; (c) is corrupt, defective, or non-functional; or (d) is found to infringe third-party rights or be unlawful. Requests must be raised within <span class="ph">[●]</span> days of purchase via Clause 18.</p>
+      <p><span class="lead">10.2 When refunds may be considered.</span> Consistent with the Consumer Protection Act, 2019, a refund, replacement, or other remedy may be provided where a Creative Asset: (a) is not delivered or cannot be downloaded due to a Platform/Seller fault; (b) is materially not as described; (c) is corrupt, defective, or non-functional; or (d) is found to infringe third-party rights or be unlawful. Requests must be raised within the timelines set out in our Refund and Cancellation Policy, via the channels in Clause 18.</p>
       <p><span class="lead">10.3 Process.</span> Approved refunds are processed to the original payment method through the Gateway within its standard timelines. Where the Seller is a third party, the refund may be effected against the Seller’s proceeds. The full Refund and Cancellation Policy forms part of these Terms.</p>
       <p><span class="lead">10.4 No unfair trade practice.</span> Kreate Studio shall not adopt any unfair trade practice — whether misleading advertisement, price manipulation, or otherwise — as prohibited by the Consumer Protection (E-Commerce) Rules, 2020.</p>
     </section>
 
-    <section id="s11">
-      <h2 class="sec"><span class="snum">11</span>Reporting, Blocking, and Enforcement</h2>
-      <hr class="sec-rule">
+    <section id="s11" class="clause">
+      <div class="sec-head"><span class="num">11</span><h2>Reporting, Blocking, and Enforcement</h2></div>
       <p><span class="n">11.1</span> The Platform provides in-app tools to report objectionable Listings, Content, or Users, and to block other Users, to help maintain a safe marketplace and support our obligations relating to user-generated content.</p>
       <p><span class="n">11.2</span> On receipt of a report, we may review the Content or conduct and take appropriate action, including removal, warnings, suspension, or termination. We do not guarantee any particular outcome or timeline, except where mandated by law (Clauses 12 and 18).</p>
       <p><span class="n">11.3</span> Blocking is a private control between Users. For privacy reasons, the Platform will not disclose the full list of Users who have blocked a given person; a User may at most learn they have been blocked in a specific interaction context.</p>
     </section>
 
-    <section id="s12">
-      <h2 class="sec"><span class="snum">12</span>Copyright and Intellectual-Property Takedown</h2>
-      <hr class="sec-rule">
+    <section id="s12" class="clause">
+      <div class="sec-head"><span class="num">12</span><h2>Copyright and Intellectual-Property Takedown</h2></div>
       <p><span class="n">12.1</span> If you believe Content on the Platform infringes your copyright or other IP rights, submit a written complaint to the Grievance Officer (Clause 18) containing: (a) your name and contact details; (b) identification of the work claimed to be infringed; (c) identification and location (Listing link/ID) of the allegedly infringing Content; (d) a statement of good-faith belief that the use is not authorised; (e) a statement that the information is accurate and, under penalty of law, that you are the owner or authorised to act on their behalf; and (f) your signature (physical or electronic).</p>
       <p><span class="n">12.2</span> On a valid complaint, in line with the intermediary due-diligence requirements of the IT Rules, 2021, we will act within the timelines in Clause 18, which may include disabling access to or removing the Content.</p>
       <p><span class="lead">12.3 Counter-notice.</span> A Seller whose Content has been removed may submit a counter-notice with supporting evidence. We may, at our discretion and where appropriate, restore Content following a valid counter-notice, unless barred by law or a competent authority.</p>
       <p><span class="lead">12.4 Repeat infringers.</span> We may suspend or terminate the accounts of Users who repeatedly infringe IP rights.</p>
     </section>
 
-    <section id="s13">
-      <h2 class="sec"><span class="snum">13</span>Intermediary Safe Harbour</h2>
-      <hr class="sec-rule">
+    <section id="s13" class="clause">
+      <div class="sec-head"><span class="num">13</span><h2>Intermediary Safe Harbour</h2></div>
       <p><span class="n">13.1</span> To the fullest extent permitted by law, and consistent with Section 79 of the Information Technology Act, 2000, Kreate Studio shall not be liable for third-party Content, Listings, or Creative Assets made available by Users, provided we observe the applicable due-diligence obligations of an intermediary.</p>
       <p><span class="n">13.2</span> We do not endorse, and are not responsible for, the accuracy, legality, originality, or quality of any third-party Content or Creative Asset, or for any transaction between a Buyer and a third-party Seller. Any reliance you place on such Content is at your own risk.</p>
       <p><span class="n">13.3</span> On becoming aware, through actual knowledge or a complaint or notification by the appropriate government or its agency or a court order, that Content is being used to commit an unlawful act, we will act expeditiously to remove or disable access to it as required by law.</p>
     </section>
 
-    <section id="s14">
-      <h2 class="sec"><span class="snum">14</span>Privacy and Data Protection</h2>
-      <hr class="sec-rule">
+    <section id="s14" class="clause">
+      <div class="sec-head"><span class="num">14</span><h2>Privacy and Data Protection</h2></div>
       <p><span class="n">14.1</span> Our collection, use, storage, and disclosure of your personal data are governed by our Privacy Policy, incorporated by reference and designed to align with the <strong>Digital Personal Data Protection Act, 2023</strong> and the rules made thereunder, and with the reasonable-security-practices requirements under the Information Technology Act, 2000.</p>
       <p><span class="lead">14.2 Cross-border processing.</span> You acknowledge the Platform is built on cloud infrastructure (including Google Firebase) and that certain data may be processed or stored on servers outside India, carried out in accordance with applicable law, including any cross-border transfer restrictions notified under the DPDP Act, 2023.</p>
       <p><span class="lead">14.3 Consent.</span> By using the Platform, you consent to processing of your personal data as described in the Privacy Policy. You may withdraw consent and exercise your rights (access, correction, erasure) as set out there, subject to legal retention requirements.</p>
     </section>
 
-    <section id="s15">
-      <h2 class="sec"><span class="snum">15</span>Disclaimers and Warranties</h2>
-      <hr class="sec-rule">
+    <section id="s15" class="clause">
+      <div class="sec-head"><span class="num">15</span><h2>Disclaimers and Warranties</h2></div>
       <p><span class="n">15.1</span> The Platform and all Content are provided on an “as is” and “as available” basis. To the maximum extent permitted by law, Kreate Studio disclaims all warranties, express, implied, or statutory, including merchantability, fitness for a particular purpose, non-infringement, and title, in respect of the Platform and third-party Content.</p>
       <p><span class="n">15.2</span> We do not warrant that the Platform will be uninterrupted, timely, secure, or error-free, or free of viruses. You are responsible for scanning downloaded files and maintaining backups.</p>
       <p><span class="n">15.3</span> Nothing in these Terms excludes any liability that cannot be excluded under applicable Indian law, including under the Consumer Protection Act, 2019.</p>
     </section>
 
-    <section id="s16">
-      <h2 class="sec"><span class="snum">16</span>Limitation of Liability and Indemnity</h2>
-      <hr class="sec-rule">
+    <section id="s16" class="clause">
+      <div class="sec-head"><span class="num">16</span><h2>Limitation of Liability and Indemnity</h2></div>
       <p><span class="lead">16.1 Limitation.</span> To the maximum extent permitted by law, Kreate Studio and its founder, officers, and personnel shall not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, or for loss of profits, revenue, data, goodwill, or business, arising from your use of or inability to use the Platform.</p>
       <p><span class="lead">16.2 Cap.</span> To the maximum extent permitted by law, our aggregate liability shall not exceed the greater of (a) the total commission/fees actually received by Kreate Studio from you in the 3 months preceding the event giving rise to the claim, or (b) ₹1,000. This is subject to Clause 15.3.</p>
       <p><span class="lead">16.3 Indemnity.</span> You agree to indemnify and hold harmless Kreate Studio and its founder, officers, and personnel from any claim, loss, liability, cost, or expense (including reasonable legal fees) arising from: (a) your breach of these Terms; (b) your Content or Creative Assets, including any allegation of infringement or illegality; (c) your violation of any law; or (d) your infringement of any third party’s rights.</p>
     </section>
 
-    <section id="s17">
-      <h2 class="sec"><span class="snum">17</span>Suspension and Termination</h2>
-      <hr class="sec-rule">
+    <section id="s17" class="clause">
+      <div class="sec-head"><span class="num">17</span><h2>Suspension and Termination</h2></div>
       <p><span class="lead">17.1 By you.</span> You may stop using the Platform and request deletion of your account at any time, subject to completion of pending transactions and our legal retention obligations.</p>
       <p><span class="lead">17.2 By us.</span> We may suspend or terminate your access, remove your Content, or withhold pending payouts (to the extent permitted by law) immediately where we reasonably believe you have breached these Terms or any law, or where required by a competent authority. Where practicable and lawful, we will give notice and, in appropriate cases, an opportunity to remedy.</p>
       <p><span class="lead">17.3 Effect.</span> On termination, licences granted to you cease, save that (a) purchase licences validly obtained by Buyers before termination survive on their terms, and (b) provisions which by nature survive (Clauses 8, 12, 13, 15, 16, 18, 19, 20) shall survive.</p>
     </section>
 
-    <section id="s18">
-      <h2 class="sec"><span class="snum">18</span>Grievance Redressal and Contact</h2>
-      <hr class="sec-rule">
+    <section id="s18" class="clause">
+      <div class="sec-head"><span class="num">18</span><h2>Grievance Redressal and Contact</h2></div>
       <p><span class="n">18.1</span> In compliance with Rule 3(2) of the IT Rules, 2021 and Rule 4 of the Consumer Protection (E-Commerce) Rules, 2020, Kreate Studio has appointed a Grievance Officer to receive and resolve complaints regarding the Platform, Content, or any violation of these Terms or applicable law:</p>
-      <div class="grievance">
-        <table class="tbl">
-          <tbody>
-            <tr><th>Grievance Officer</th><td><span class="ph">Mr. Ansh Bhardwaj</span></td></tr>
-            <tr><th>Designation</th><td>Grievance Officer, Kreate Studio</td></tr>
-            <tr><th>Email</th><td><span class="ph">workwithansh8@gmail.com</span> (dedicated grievance email)</td></tr>
-            <tr><th>Postal Address</th><td><span class="ph">Agra, Uttar Pradesh, India</span></td></tr>
-            <tr><th>Hours</th><td><span class="ph"></span>Monday–Friday, 10:00–18:00 IST</td></tr>
-          </tbody>
-        </table>
+      <div class="card">
+        <dl class="grid-kv">
+          <dt>Grievance Officer</dt><dd><strong>Mr. Ansh Bhardwaj</strong></dd>
+          <dt>Designation</dt><dd>Grievance Officer, Kreate Studio</dd>
+          <dt>Email</dt><dd><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a> (dedicated grievance email)</dd>
+          <dt>Postal address</dt><dd>Agra, Uttar Pradesh, India</dd>
+          <dt>Hours</dt><dd>Monday–Friday, 10:00–18:00 IST</dd>
+        </dl>
       </div>
       <p><span class="lead">18.2 Timelines.</span> The Grievance Officer will acknowledge a complaint within 24 hours of receipt and dispose of it within 15 days, as required by the IT Rules, 2021. Complaints under Rule 3(2)(b) (including certain content depicting an individual in a sexual act or conduct) will be addressed within 24 hours where a valid request is received.</p>
       <p><span class="lead">18.3 Consumer complaints.</span> For complaints under the Consumer Protection (E-Commerce) Rules, 2020, the Grievance Officer will acknowledge receipt within 48 hours and ordinarily redress the complaint within 1 month from receipt.</p>
-      <p><span class="lead">18.4 General contact.</span> For general queries, contact <span class="ph">workwithansh8@gmail.com</span>. Nothing here affects your statutory rights or your right to approach the appropriate consumer or judicial forum.</p>
+      <p><span class="lead">18.4 General contact.</span> For general queries, contact <a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a>. Nothing here affects your statutory rights or your right to approach the appropriate consumer or judicial forum.</p>
     </section>
 
-    <section id="s19">
-      <h2 class="sec"><span class="snum">19</span>Governing Law, Jurisdiction, and Dispute Resolution</h2>
-      <hr class="sec-rule">
+    <section id="s19" class="clause">
+      <div class="sec-head"><span class="num">19</span><h2>Governing Law, Jurisdiction, and Dispute Resolution</h2></div>
       <p><span class="lead">19.1 Governing law.</span> These Terms are governed by and construed in accordance with the laws of India.</p>
-      <p><span class="lead">19.2 Dispute resolution.</span> The parties will first attempt to resolve any dispute amicably through the Grievance Officer. If not resolved within 30 days, it <span class="note-inline">[may be referred to arbitration by a sole arbitrator under the Arbitration and Conciliation Act, 1996, seated at Agra, conducted in English; or the parties may proceed to court — to be finalised with legal advice]</span>.</p>
+      <p><span class="lead">19.2 Dispute resolution.</span> The parties will first attempt to resolve any dispute amicably through the Grievance Officer. Failing amicable resolution within 30 days, the dispute shall be referred to and finally resolved by arbitration under the Arbitration and Conciliation Act, 1996, before a sole arbitrator appointed by mutual consent. The seat and venue of arbitration shall be Agra, Uttar Pradesh; the language of arbitration shall be English; and the arbitral award shall be final and binding on the parties, subject to Clause 19.4.</p>
       <p><span class="lead">19.3 Jurisdiction.</span> Subject to Clause 19.2 and to any mandatory consumer-protection provisions that permit a consumer to file where they reside, the courts at <span class="ph">Agra, Uttar Pradesh</span> shall have exclusive jurisdiction.</p>
       <p><span class="lead">19.4 Consumer rights preserved.</span> Nothing here limits a consumer’s rights to approach the consumer dispute redressal commissions under the Consumer Protection Act, 2019.</p>
     </section>
 
-    <section id="s20">
-      <h2 class="sec"><span class="snum">20</span>Force Majeure</h2>
-      <hr class="sec-rule">
+    <section id="s20" class="clause">
+      <div class="sec-head"><span class="num">20</span><h2>Force Majeure</h2></div>
       <p><span class="n">20.1</span> Kreate Studio shall not be liable for any failure or delay caused by events beyond its reasonable control, including acts of God, natural disasters, epidemics or pandemics, war, civil unrest, government action, network or utility failures, or failures of third-party service providers (including cloud and payment providers).</p>
     </section>
 
-    <section id="s21">
-      <h2 class="sec"><span class="snum">21</span>Changes to These Terms</h2>
-      <hr class="sec-rule">
+    <section id="s21" class="clause">
+      <div class="sec-head"><span class="num">21</span><h2>Changes to These Terms</h2></div>
       <p><span class="n">21.1</span> We may modify these Terms at any time. We will update the “Last Updated” date and, for material changes, provide reasonable notice through the Platform or otherwise. Continued use after changes take effect constitutes acceptance. If you do not agree, you must stop using the Platform.</p>
     </section>
 
-    <section id="s22">
-      <h2 class="sec"><span class="snum">22</span>Miscellaneous</h2>
-      <hr class="sec-rule">
+    <section id="s22" class="clause">
+      <div class="sec-head"><span class="num">22</span><h2>Miscellaneous</h2></div>
       <p><span class="lead">22.1 Entire agreement.</span> These Terms, with the Privacy Policy, Seller Agreement, Refund and Cancellation Policy, and other referenced policies, constitute the entire agreement and supersede prior agreements.</p>
       <p><span class="lead">22.2 Severability.</span> If any provision is held invalid, it will be enforced to the maximum extent permissible and the remainder will stay in effect.</p>
       <p><span class="lead">22.3 Waiver.</span> No failure or delay in exercising any right operates as a waiver.</p>
@@ -548,85 +308,55 @@
       </div>
     </section>
 
-    <section id="annex" class="annex">
-      <h2 class="sec"><span class="snum">A</span>Annexure — Items to Finalise Before Publication</h2>
-      <hr class="sec-rule">
-      <p>The following fields and decisions are marked <span class="ph">[●]</span> in the body and must be completed and reviewed by a qualified Indian advocate before this document is published or the Platform is launched:</p>
+    <section id="annex" class="clause annex">
+      <div class="sec-head"><span class="num">A</span><h2>Annexure — Items to Finalise Before Publication</h2></div>
+      <p>The following items remain genuinely open and must be resolved, and this document re-reviewed by a qualified Indian advocate, before the Platform is scaled beyond its launch stage:</p>
       <ul class="pl">
         <li>Legal entity name and structure (sole proprietorship / OPC / LLP / Private Limited) and registered address — no entity is yet formed; this drives liability, payments onboarding, and tax registration.</li>
-        <li>Effective Date and Last Updated date.</li>
-        <li>Clause 9 (Payments): confirm the exact launch-time money flow. If Kreate Studio collects and passes through third-party seller funds (rather than selling only its own assets or using Razorpay Route split settlement), the RBI Payment Aggregator framework may apply — obtain specific advice.</li>
-        <li>Clause 10 (Refunds): confirm the refund window and align with the standalone Refund and Cancellation Policy.</li>
-        <li>Clause 18 (Grievance Officer): insert the name, dedicated grievance email, postal address, and hours — mandatory under the IT Rules, 2021 and the Consumer Protection (E-Commerce) Rules, 2020.</li>
-        <li>Clause 19 (Dispute resolution &amp; jurisdiction): choose between arbitration and courts, and fix the seat/jurisdiction city.</li>
-        <li>Confirm consistency with the Privacy Policy, Seller Agreement, and Refund Policy, and that live security-rule/access-control claims match the actual production configuration.</li>
+        <li>Clause 9 (Payments): confirm the operational settlement flow — including onboarding of third-party Sellers and split-settlement via the Payment Aggregator — with the Payment Partner and a qualified Indian lawyer as the Platform scales beyond first-party listings.</li>
         <li>Confirm GST registration and TCS/TDS applicability with a tax adviser before enabling third-party paid sales.</li>
+        <li>Confirm consistency with the Privacy Policy, Seller Agreement, and Refund Policy, and that live security-rule/access-control claims match the actual production configuration.</li>
       </ul>
     </section>
   </main>
 </div>
 
-<footer>
-  <div class="fi">
-    <span><span class="fbrand">Kreate Studio</span> · Terms of Service · Version 1.0</span>
-    <span>Confidential draft — for legal review. Not legal advice.</span>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="disclaimer">Confidential draft for legal review — not legal advice. This document is a drafting aid prepared to a good standard of Indian legal practice for a marketplace intermediary; it should be reviewed by a qualified Indian advocate before publication or launch.</p>
+    <div class="site-footer__top">
+      <div>
+        <div class="site-footer__brand"><img src="assets/img/logo.png" alt=""><span>Kreate Studio</span></div>
+        <p class="site-footer__tag">India's creative assets marketplace — LUTs, UI kits, templates, motion graphics, logo kits and audio packs from independent creators.</p>
+      </div>
+      <div class="site-footer__links">
+        <div class="site-footer__col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="index.html">Privacy Policy</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+            <li><a href="seller-policy.html">Seller Policy</a></li>
+            <li><a href="refund-policy.html">Refund &amp; Cancellation</a></li>
+            <li><a href="grievance.html">Grievance Redressal</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></li>
+            <li><span>Agra, Uttar Pradesh, India</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year></span> Kreate Studio. All rights reserved.</span>
+      <span class="made">Made in India</span>
+    </div>
   </div>
 </footer>
 
 <button id="toTop" aria-label="Back to top">↑</button>
-
-<script>
-(function(){
-  // Progress bar
-  var bar = document.getElementById('progress');
-  var toTop = document.getElementById('toTop');
-  function onScroll(){
-    var st = window.scrollY || document.documentElement.scrollTop;
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (h>0 ? (st/h*100) : 0) + '%';
-    toTop.classList.toggle('show', st > 600);
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-
-  // Mobile TOC toggle
-  var toc = document.getElementById('toc');
-  var toggle = document.getElementById('tocToggle');
-  toggle.addEventListener('click', function(){
-    var open = toc.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  // Collapse on mobile after picking a link
-  document.querySelectorAll('#tocList a').forEach(function(a){
-    a.addEventListener('click', function(){
-      if(window.innerWidth <= 920){ toc.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
-    });
-  });
-
-  // Scroll-spy
-  var links = Array.prototype.slice.call(document.querySelectorAll('#tocList a'));
-  var map = {};
-  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  var sections = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
-
-  if('IntersectionObserver' in window){
-    var current = null;
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          if(current) current.classList.remove('active');
-          var a = map[e.target.id];
-          if(a){ a.classList.add('active'); current = a;
-            // keep active item visible in the sidebar
-            if(window.innerWidth > 920){ a.scrollIntoView({block:'nearest'}); }
-          }
-        }
-      });
-    }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
-    sections.forEach(function(s){ obs.observe(s); });
-  }
-})();
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

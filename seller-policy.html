@@ -1,266 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seller / Vendor Policy · Kreate Studio</title>
 <meta name="description" content="The terms on which creators list and sell digital creative assets on Kreate Studio — India's creative assets marketplace.">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<script>(function(){try{var t=localStorage.getItem('kreate-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FAF9FC; --bg-2:#F3F0FA; --surface:#FFFFFF;
-    --ink:#211B2E; --ink-soft:#4A4458; --muted:#756F84;
-    --accent:#6C3FC7; --accent-deep:#4A2596; --accent-soft:#EDE7FA;
-    --line:#E7E2F2; --line-2:#D8D0EC;
-    --amber-bg:#FCF4E6; --amber-ink:#9A6B1E; --amber-line:#E9D3A6;
-    --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
-    --serif:"Fraunces",Georgia,serif;
-    --mono:"IBM Plex Mono",ui-monospace,monospace;
-    --maxw:1180px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--sans); font-size:16.5px; line-height:1.62;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  a{color:var(--accent-deep);}
-
-  /* reading progress */
-  #progress{position:fixed; top:0; left:0; height:3px; width:0%;
-    background:linear-gradient(90deg,var(--accent),#B77BEB); z-index:60; transition:width .08s linear;}
-
-  /* top bar */
-  .topbar{position:sticky; top:0; z-index:50; background:rgba(250,249,252,.86);
-    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
-  .topbar .in{max-width:var(--maxw); margin:0 auto; padding:12px 24px;
-    display:flex; align-items:center; gap:14px;}
-  .brand{font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:-.01em; color:var(--accent-deep);}
-  .brand b{color:var(--ink);}
-  .topbar .sep{width:1px; height:20px; background:var(--line-2);}
-  .topbar .doc{font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
-  .topbar .ver{margin-left:auto; font-family:var(--mono); font-size:12px; color:var(--accent-deep);
-    background:var(--accent-soft); padding:4px 10px; border-radius:999px;}
-
-  /* hero */
-  .hero{position:relative; overflow:hidden;
-    background:
-      radial-gradient(1100px 460px at 82% -10%, rgba(108,63,199,.14), transparent 60%),
-      radial-gradient(700px 380px at 8% 0%, rgba(183,123,235,.10), transparent 55%),
-      var(--bg);
-    border-bottom:1px solid var(--line);}
-  .hero .in{max-width:var(--maxw); margin:0 auto; padding:64px 24px 52px;}
-  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.28em; text-transform:uppercase;
-    color:var(--accent); margin:0 0 18px; display:flex; align-items:center; gap:12px;}
-  .eyebrow::before{content:""; width:34px; height:1.5px; background:var(--accent);}
-  h1.title{font-family:var(--serif); font-weight:500; font-size:clamp(34px,5.6vw,60px);
-    line-height:1.04; letter-spacing:-.02em; margin:0 0 8px; max-width:16ch; color:var(--ink);}
-  h1.title em{font-style:italic; color:var(--accent-deep);}
-  .lede{font-size:clamp(16px,2vw,19px); color:var(--ink-soft); max-width:60ch; margin:18px 0 0;}
-  .chips{display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 0;}
-  .chip{font-family:var(--mono); font-size:12px; color:var(--ink-soft);
-    background:var(--surface); border:1px solid var(--line-2); border-radius:999px; padding:6px 13px;}
-  .chip b{color:var(--accent-deep);}
-
-  /* split bar — the one key commercial fact, shown once */
-  .split{margin:34px 0 0; max-width:560px;}
-  .split .lab{display:flex; justify-content:space-between; font-family:var(--mono);
-    font-size:12px; color:var(--muted); margin-bottom:7px; letter-spacing:.04em;}
-  .split .lab b{color:var(--ink);}
-  .split .track{height:16px; border-radius:999px; overflow:hidden; display:flex;
-    border:1px solid var(--line-2); background:var(--surface);}
-  .split .you{width:90%; background:linear-gradient(90deg,var(--accent-deep),var(--accent));}
-  .split .plat{width:10%; background:repeating-linear-gradient(45deg,#D9CEF0,#D9CEF0 5px,#E7E0F5 5px,#E7E0F5 10px);}
-  .split .cap{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:8px;}
-
-  /* draft callout */
-  .callout{max-width:var(--maxw); margin:26px auto 0; padding:0 24px;}
-  .callout .box{background:var(--amber-bg); border:1px solid var(--amber-line);
-    border-radius:14px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start;}
-  .callout .tag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--amber-ink); font-weight:600; white-space:nowrap; padding-top:2px;}
-  .callout p{margin:0; font-size:14.5px; color:#6f5320; line-height:1.55;}
-
-  /* layout */
-  .shell{max-width:var(--maxw); margin:0 auto; padding:40px 24px 20px;
-    display:grid; grid-template-columns:248px 1fr; gap:52px; align-items:start;}
-
-  /* sticky TOC — signature element */
-  nav.toc{position:sticky; top:78px; align-self:start;}
-  nav.toc .h{font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
-    color:var(--muted); margin:0 0 14px 12px;}
-  nav.toc ol{list-style:none; margin:0; padding:0; border-left:1px solid var(--line-2);}
-  nav.toc a{display:flex; gap:11px; text-decoration:none; color:var(--ink-soft);
-    padding:6px 12px; font-size:13.5px; line-height:1.35; margin-left:-1px;
-    border-left:2px solid transparent; transition:color .15s, border-color .15s;}
-  nav.toc a .n{font-family:var(--mono); font-size:11.5px; color:var(--muted); min-width:20px;}
-  nav.toc a:hover{color:var(--accent-deep);}
-  nav.toc a.active{color:var(--accent-deep); border-left-color:var(--accent); font-weight:600;}
-  nav.toc a.active .n{color:var(--accent);}
-
-  /* content */
-  main{min-width:0; max-width:78ch;}
-  section.clause{scroll-margin-top:86px; padding:8px 0 30px; border-bottom:1px solid var(--line); margin-bottom:26px;}
-  section.clause:last-of-type{border-bottom:none;}
-  .sec-head{display:flex; align-items:baseline; gap:16px; margin:0 0 14px;}
-  .sec-head .num{font-family:var(--serif); font-weight:500; font-size:30px; color:var(--accent);
-    line-height:1; min-width:1.5ch;}
-  .sec-head h2{font-family:var(--sans); font-weight:700; font-size:21px; letter-spacing:-.01em;
-    margin:0; color:var(--ink);}
-  h3.subhead{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--accent-deep); margin:22px 0 10px;}
-  p{margin:0 0 13px;}
-  main p{color:var(--ink-soft);}
-  main strong{color:var(--ink); font-weight:600;}
-  .intro{font-size:16.5px;}
-
-  /* numbered clause rows */
-  .cl{display:grid; grid-template-columns:auto 1fr; gap:14px; margin:0 0 11px;}
-  .cl .k{font-family:var(--mono); font-size:13px; font-weight:600; color:var(--accent-deep);
-    padding-top:1px; white-space:nowrap;}
-  .cl p{margin:0; color:var(--ink-soft);}
-
-  ul.plain{margin:4px 0 12px; padding:0; list-style:none;}
-  ul.plain li{position:relative; padding-left:22px; margin:0 0 7px; color:var(--ink-soft);}
-  ul.plain li::before{content:""; position:absolute; left:4px; top:11px; width:6px; height:6px;
-    border-radius:50%; background:var(--accent);}
-
-  /* tables */
-  .twrap{border:1px solid var(--line-2); border-radius:14px; overflow:hidden; margin:6px 0 16px; background:var(--surface);}
-  table{width:100%; border-collapse:collapse; font-size:14.5px;}
-  thead th{background:var(--accent-soft); color:var(--ink); text-align:left; font-weight:600;
-    padding:11px 16px; font-size:13px;}
-  tbody td{padding:12px 16px; border-top:1px solid var(--line); color:var(--ink-soft); vertical-align:top;}
-  tbody td b{color:var(--ink);}
-  td .pct{font-family:var(--serif); font-size:20px; color:var(--accent-deep); font-weight:600;}
-  .term{font-weight:600; color:var(--ink); white-space:nowrap;}
-
-  /* internal note */
-  .internal{border-left:3px solid var(--accent); background:var(--bg-2);
-    border-radius:0 12px 12px 0; padding:14px 18px; margin:14px 0 4px;}
-  .internal .t{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--accent-deep); font-weight:600; margin-bottom:6px;}
-  .internal p{font-size:13.5px; font-style:italic; color:var(--muted); margin:0;}
-
-  /* grievance / acceptance cards */
-  .card{background:var(--surface); border:1px solid var(--line-2); border-radius:16px; padding:22px 24px; margin:14px 0;}
-  .card .ct{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;}
-  .grid-kv{display:grid; grid-template-columns:150px 1fr; gap:10px 20px; font-size:14.5px;}
-  .grid-kv dt{color:var(--muted); font-family:var(--mono); font-size:12.5px; padding-top:2px;}
-  .grid-kv dd{margin:0; color:var(--ink);}
-  .grid-kv dd.ph{color:var(--muted); font-style:italic;}
-
-  .placeholder{color:var(--accent-deep); background:var(--accent-soft); border-radius:5px;
-    padding:1px 6px; font-family:var(--mono); font-size:.86em;}
-
-  /* footer */
-  footer{border-top:1px solid var(--line); background:var(--bg-2); margin-top:24px;}
-  footer .in{max-width:var(--maxw); margin:0 auto; padding:34px 24px 48px;}
-  footer .dis{font-size:13px; color:var(--muted); font-style:italic; max-width:70ch; margin:0 0 14px;}
-  footer .meta{font-family:var(--mono); font-size:12px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap;}
-
-  /* mobile TOC toggle */
-  .toc-toggle{display:none;}
-
-  @media (max-width:900px){
-    .shell{grid-template-columns:1fr; gap:0; padding-top:22px;}
-    nav.toc{position:static; margin-bottom:22px;}
-    nav.toc ol{border-left:none; max-height:0; overflow:hidden; transition:max-height .3s ease;
-      border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-    nav.toc.open ol{max-height:900px;}
-    nav.toc a{border-left:none; padding:9px 4px;}
-    nav.toc a.active{border-left:none; padding-left:4px;}
-    .toc-toggle{display:flex; width:100%; align-items:center; justify-content:space-between;
-      background:var(--surface); border:1px solid var(--line-2); border-radius:12px;
-      padding:12px 16px; font-family:var(--mono); font-size:12px; letter-spacing:.1em;
-      text-transform:uppercase; color:var(--ink); cursor:pointer;}
-    .toc-toggle .arw{transition:transform .3s; color:var(--accent);}
-    nav.toc.open .toc-toggle .arw{transform:rotate(180deg);}
-    nav.toc .h{display:none;}
-    .grid-kv{grid-template-columns:1fr;}
-    .grid-kv dt{padding-top:8px;}
-    .hero .in{padding:44px 24px 40px;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;} *{transition:none !important;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div id="progress"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="progressBar" aria-hidden="true"></div>
 
-<div class="topbar">
-  <div class="in">
-    <span class="brand">Kreate <b>Studio</b></span>
-    <span class="sep"></span>
-    <span class="doc">Seller / Vendor Policy</span>
-    <span class="ver">v1.0</span>
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="Kreate Studio" class="brand__mark">
+      <span class="brand__word">Kreate <span class="brand__word-light">Studio</span></span>
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Legal documents">
+      <a href="index.html" class="site-nav__link">Privacy Policy</a>
+      <a href="tos.html" class="site-nav__link">Terms of Service</a>
+      <a href="seller-policy.html" class="site-nav__link is-active" aria-current="page">Seller Policy</a>
+      <a href="refund-policy.html" class="site-nav__link">Refund Policy</a>
+      <a href="grievance.html" class="site-nav__link">Grievance Redressal</a>
+    </nav>
+    <div class="site-header__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+    </div>
   </div>
-</div>
+</header>
 
-<header class="hero">
-  <div class="in">
-    <p class="eyebrow">Seller / Vendor Policy &amp; Agreement</p>
-    <h1 class="title">The terms for selling on <em>Kreate&nbsp;Studio</em></h1>
+<header class="doc-hero">
+  <div class="doc-hero__inner">
+    <p class="eyebrow">Legal · Seller Agreement</p>
+    <h1>The terms for selling on Kreate&nbsp;Studio</h1>
     <p class="lede">Kreate Studio is a mobile marketplace where independent creators in India list and sell digital creative assets — LUTs, UI kits, templates, motion graphics, logo kits, audio packs and more. This policy sets out the terms on which you sell.</p>
     <div class="chips">
+      <span class="chip">Effective <b>10 July 2026</b></span>
       <span class="chip">Version <b>1.0</b></span>
-      <span class="chip">Effective <b>[●] 2026</b></span>
       <span class="chip">Applies to <b>all Sellers</b></span>
       <span class="chip">Governed by <b>Indian law</b></span>
     </div>
     <div class="split">
       <div class="lab"><span>You keep <b>90%</b></span><span>Platform fee <b>10%</b></span></div>
       <div class="track"><div class="you"></div><div class="plat"></div></div>
-      <div class="cap">Of every sale price, before applicable taxes and refunds — see §8.</div>
+      <div class="cap">Of every sale price, before applicable taxes and refunds — see §8. Buyers separately pay a 12.5% service fee on top of the listed price; it is not deducted from your proceeds.</div>
     </div>
   </div>
 </header>
 
-<div class="callout">
-  <div class="box">
+<div class="callout-wrap">
+  <div class="callout">
     <span class="tag">Draft · for review</span>
     <p>This is a working draft prepared to structure the Seller relationship. It is not legal advice or a compliance determination. Items marked <span class="placeholder">[●]</span> are placeholders to complete. Before publishing or accepting from any live Seller, have it reviewed by a qualified Indian lawyer — especially the payments/settlement, GST/TCS, DPDP and dispute-resolution clauses.</p>
   </div>
 </div>
 
-<div class="shell">
-
-  <!-- ============ TOC ============ -->
-  <nav class="toc" id="toc">
-    <button class="toc-toggle" id="tocToggle" aria-expanded="false">Jump to section <span class="arw">▾</span></button>
-    <p class="h">Contents</p>
+<div class="doc-shell">
+  <nav class="toc" id="toc" aria-label="Table of contents">
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false">Contents · 19 sections <span class="arw">▾</span></button>
+    <p class="toc-label">Contents</p>
     <ol>
-      <li><a href="#s1"><span class="n">01</span> Introduction &amp; Acceptance</a></li>
-      <li><a href="#s2"><span class="n">02</span> Definitions</a></li>
-      <li><a href="#s3"><span class="n">03</span> Eligibility &amp; Account</a></li>
-      <li><a href="#s4"><span class="n">04</span> Nature of the Relationship</a></li>
-      <li><a href="#s5"><span class="n">05</span> Listings &amp; Intellectual Property</a></li>
-      <li><a href="#s6"><span class="n">06</span> Content Review &amp; Prohibited Content</a></li>
-      <li><a href="#s7"><span class="n">07</span> Pricing</a></li>
-      <li><a href="#s8"><span class="n">08</span> Platform Fee &amp; Commission</a></li>
-      <li><a href="#s9"><span class="n">09</span> Payments &amp; Settlement</a></li>
-      <li><a href="#s10"><span class="n">10</span> Taxes</a></li>
-      <li><a href="#s11"><span class="n">11</span> Refunds &amp; Chargebacks</a></li>
-      <li><a href="#s12"><span class="n">12</span> Ratings, Reports &amp; Blocking</a></li>
-      <li><a href="#s13"><span class="n">13</span> Suspension &amp; Termination</a></li>
-      <li><a href="#s14"><span class="n">14</span> Indemnity &amp; Liability</a></li>
-      <li><a href="#s15"><span class="n">15</span> Data Protection</a></li>
-      <li><a href="#s16"><span class="n">16</span> Grievance Redressal</a></li>
-      <li><a href="#s17"><span class="n">17</span> Changes to this Policy</a></li>
-      <li><a href="#s18"><span class="n">18</span> Governing Law &amp; Disputes</a></li>
-      <li><a href="#s19"><span class="n">19</span> Acceptance</a></li>
+      <li><a href="#s1"><span class="n">01</span>Introduction &amp; Acceptance</a></li>
+      <li><a href="#s2"><span class="n">02</span>Definitions</a></li>
+      <li><a href="#s3"><span class="n">03</span>Eligibility &amp; Account</a></li>
+      <li><a href="#s4"><span class="n">04</span>Nature of the Relationship</a></li>
+      <li><a href="#s5"><span class="n">05</span>Listings &amp; Intellectual Property</a></li>
+      <li><a href="#s6"><span class="n">06</span>Content Review &amp; Prohibited Content</a></li>
+      <li><a href="#s7"><span class="n">07</span>Pricing</a></li>
+      <li><a href="#s8"><span class="n">08</span>Platform Fee &amp; Commission</a></li>
+      <li><a href="#s9"><span class="n">09</span>Payments &amp; Settlement</a></li>
+      <li><a href="#s10"><span class="n">10</span>Taxes</a></li>
+      <li><a href="#s11"><span class="n">11</span>Refunds &amp; Chargebacks</a></li>
+      <li><a href="#s12"><span class="n">12</span>Ratings, Reports &amp; Blocking</a></li>
+      <li><a href="#s13"><span class="n">13</span>Suspension &amp; Termination</a></li>
+      <li><a href="#s14"><span class="n">14</span>Indemnity &amp; Liability</a></li>
+      <li><a href="#s15"><span class="n">15</span>Data Protection</a></li>
+      <li><a href="#s16"><span class="n">16</span>Grievance Redressal</a></li>
+      <li><a href="#s17"><span class="n">17</span>Changes to this Policy</a></li>
+      <li><a href="#s18"><span class="n">18</span>Governing Law &amp; Disputes</a></li>
+      <li><a href="#s19"><span class="n">19</span>Acceptance</a></li>
     </ol>
   </nav>
 
-  <!-- ============ CONTENT ============ -->
-  <main>
+  <main class="doc-content" id="main">
 
     <section class="clause" id="s1">
-      <div class="sec-head"><span class="num">1</span><h2>Introduction and Acceptance</h2></div>
+      <div class="sec-head"><span class="num">01</span><h2>Introduction and Acceptance</h2></div>
       <p class="intro"><strong>Kreate Studio</strong> (“Kreate Studio”, the “Platform”, “we”, “us” or “our”) is a mobile-based online marketplace that enables independent creators in India to list, offer and sell digital creative assets — including but not limited to LUTs, UI kits, application templates, motion graphics, logo kits, audio packs, editing presets and design source files (each, a “Product”) — to buyers who discover, preview and purchase them within the Platform.</p>
       <p>The Platform is currently owned and operated by <strong>Mr. Ansh Bhardwaj</strong> as sole proprietor (the “Operator”), pending formation of a registered business entity. This Seller / Vendor Policy &amp; Agreement (this “Policy” or “Agreement”) sets out the terms on which a person may register as, and act as, a seller of Products on the Platform (a “Seller”, “Vendor” or “you”).</p>
       <div class="cl"><span class="k">1.1</span><p>This Policy is a legally binding electronic agreement between you and the Operator, executed by conduct in accordance with the Information Technology Act, 2000. No physical signature is required.</p></div>
@@ -270,12 +107,13 @@
     </section>
 
     <section class="clause" id="s2">
-      <div class="sec-head"><span class="num">2</span><h2>Definitions</h2></div>
+      <div class="sec-head"><span class="num">02</span><h2>Definitions</h2></div>
       <div class="twrap"><table>
         <thead><tr><th style="width:34%">Term</th><th>Meaning</th></tr></thead>
         <tbody>
           <tr><td class="term">Product / Listing</td><td>A digital creative asset, and its associated preview images, description, metadata and price, submitted by a Seller for sale on the Platform.</td></tr>
           <tr><td class="term">Buyer</td><td>A registered user who purchases or seeks to purchase a Product.</td></tr>
+          <tr><td class="term">Buyer Service Fee</td><td>The fee of 12.5% of the listed price, charged to a Buyer at checkout in addition to the listed price. It is collected and retained by Kreate Studio and does not form part of Net Proceeds. See §8.3.</td></tr>
           <tr><td class="term">Platform Fee</td><td>The commission retained by Kreate Studio on each successful sale, as set out in §8.</td></tr>
           <tr><td class="term">Net Proceeds</td><td>The amount payable to a Seller for a sale after deduction of the Platform Fee and any applicable taxes, charges or refunds.</td></tr>
           <tr><td class="term">Payment Partner</td><td>Razorpay and/or any other RBI-authorised payment aggregator or gateway engaged by the Operator to collect and settle payments.</td></tr>
@@ -287,19 +125,19 @@
     </section>
 
     <section class="clause" id="s3">
-      <div class="sec-head"><span class="num">3</span><h2>Eligibility and Seller Account</h2></div>
-      <h3 class="subhead">3.A — Who may sell</h3>
+      <div class="sec-head"><span class="num">03</span><h2>Eligibility and Seller Account</h2></div>
+      <h3 class="subhead">Who may sell</h3>
       <div class="cl"><span class="k">3.1</span><p>To register as a Seller you must be a natural person of at least 18 years of age, or a duly constituted legal entity, in each case competent to contract under the Indian Contract Act, 1872.</p></div>
       <div class="cl"><span class="k">3.2</span><p>You must be resident in India and hold a valid Indian bank account and/or UPI ID capable of receiving settlements, and such tax registrations (including GST, where applicable) as Applicable Law requires for your sales.</p></div>
       <div class="cl"><span class="k">3.3</span><p>You must not be a person barred from contracting or from carrying on business under any Applicable Law, nor previously removed from the Platform for breach of this Policy.</p></div>
-      <h3 class="subhead">3.B — Account information and security</h3>
+      <h3 class="subhead">Account information and security</h3>
       <div class="cl"><span class="k">3.4</span><p>You must provide accurate, current and complete information at registration (including your name, contact details, payout UPI/bank details and, where required, tax identifiers) and keep it updated. Providing false, misleading or another person’s information is a material breach of this Policy.</p></div>
       <div class="cl"><span class="k">3.5</span><p>You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. You must notify the Operator promptly of any unauthorised use.</p></div>
       <div class="cl"><span class="k">3.6</span><p>One person or entity may not, without the Operator’s written consent, operate multiple Seller accounts to circumvent fees, suspensions or Platform limits.</p></div>
     </section>
 
     <section class="clause" id="s4">
-      <div class="sec-head"><span class="num">4</span><h2>Nature of the Relationship</h2></div>
+      <div class="sec-head"><span class="num">04</span><h2>Nature of the Relationship</h2></div>
       <div class="cl"><span class="k">4.1</span><p>Kreate Studio is an <strong>intermediary</strong> and a marketplace that provides a technology platform connecting independent Sellers with Buyers. Kreate Studio is not the seller, manufacturer, author or licensor of any Product and does not own the Products listed by Sellers.</p></div>
       <div class="cl"><span class="k">4.2</span><p>You act as an independent seller. Nothing in this Policy creates any relationship of employment, partnership, joint venture, franchise, or principal-and-agent between you and the Operator, and you must not represent otherwise.</p></div>
       <div class="cl"><span class="k">4.3</span><p>As an intermediary, Kreate Studio intends to observe the due-diligence requirements applicable to intermediaries under the <strong>Information Technology Act, 2000 and the IT (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</strong>, and to preserve the safe-harbour protection available under Section 79 of that Act. You agree to co-operate with those requirements.</p></div>
@@ -307,26 +145,26 @@
     </section>
 
     <section class="clause" id="s5">
-      <div class="sec-head"><span class="num">5</span><h2>Listings, Ownership and Intellectual Property</h2></div>
-      <h3 class="subhead">5.A — Seller warranties of ownership</h3>
+      <div class="sec-head"><span class="num">05</span><h2>Listings, Ownership and Intellectual Property</h2></div>
+      <h3 class="subhead">Seller warranties of ownership</h3>
       <p>For every Product you list, you represent and warrant that:</p>
       <div class="cl"><span class="k">5.1</span><p>you are the sole and absolute owner of the Product, or you otherwise hold all rights, licences and permissions necessary to sell, distribute and licence it through the Platform;</p></div>
       <div class="cl"><span class="k">5.2</span><p>the Product is free of any encumbrance, lien, undisclosed third-party licence or claim that would prevent its sale, and does not infringe any copyright, trademark, design, patent, trade secret, privacy, publicity or other right of any third party;</p></div>
       <div class="cl"><span class="k">5.3</span><p>the Product does not contain malware, spyware, or any harmful, hidden or unauthorised code, and functions substantially as described in the Listing;</p></div>
       <div class="cl"><span class="k">5.4</span><p>the Listing (title, description, preview images and metadata) is accurate, not misleading, and complies with the Platform’s category and content standards.</p></div>
-      <h3 class="subhead">5.B — Licence granted to Kreate Studio</h3>
+      <h3 class="subhead">Licence granted to Kreate Studio</h3>
       <div class="cl"><span class="k">5.5</span><p>You retain ownership of your Products. You grant Kreate Studio a non-exclusive, royalty-free, worldwide licence, for the period your Product is listed (and for a reasonable period afterwards for records and support), to host, store, reproduce, display, create preview/watermarked versions of, and transmit the Product and its Listing content, solely for the purposes of operating, securing and providing the Platform.</p></div>
       <div class="cl"><span class="k">5.6</span><p>You additionally grant a limited licence to use your Product’s preview images, name and Listing details for reasonable marketing and promotion of the Platform. You may opt out of promotional use by written notice to the Grievance Officer, effective prospectively.</p></div>
       <div class="cl"><span class="k">5.7</span><p>On a completed sale, the Buyer receives the licence to use the Product on the licence terms you specify in the Listing (or, if none, the Platform’s standard end-user licence). You are responsible for defining lawful and consistent licence terms.</p></div>
     </section>
 
     <section class="clause" id="s6">
-      <div class="sec-head"><span class="num">6</span><h2>Content Review, Approval and Prohibited Content</h2></div>
+      <div class="sec-head"><span class="num">06</span><h2>Content Review, Approval and Prohibited Content</h2></div>
       <div class="cl"><span class="k">6.1</span><p>Every new Listing is submitted to manual Content Review and remains in a “pending” state, not publicly visible, until approved by the Operator. The Operator may preview images, inspect file metadata and download files to verify them before approval.</p></div>
       <div class="cl"><span class="k">6.2</span><p>Editing a Listing’s images or files re-triggers Content Review for that Listing. Text and price edits may take effect without re-review. The Operator may re-review any Listing at any time.</p></div>
       <div class="cl"><span class="k">6.3</span><p>The Operator may approve, reject, request changes to, delist or remove any Listing at its discretion, including where a Listing appears to breach this Policy or Applicable Law. Approval does not certify legality or non-infringement and does not waive your warranties in §5.</p></div>
       <p style="margin-top:6px"><strong>6.4 — You must not list, upload or sell any Product that:</strong></p>
-      <ul class="plain">
+      <ul class="pl">
         <li>infringes another person’s copyright, trademark, design or other intellectual-property or proprietary right (including re-uploads of another creator’s work);</li>
         <li>is unlawful, obscene, defamatory, hateful, or promotes violence, discrimination or any offence under Indian law;</li>
         <li>contains sexual content involving minors or any content that exploits or endangers children, or is otherwise prohibited under the IT Rules, 2021;</li>
@@ -337,37 +175,36 @@
     </section>
 
     <section class="clause" id="s7">
-      <div class="sec-head"><span class="num">7</span><h2>Pricing</h2></div>
+      <div class="sec-head"><span class="num">07</span><h2>Pricing</h2></div>
       <div class="cl"><span class="k">7.1</span><p>You set the sale price of each Product in Indian Rupees (INR), subject to any minimum or maximum limits the Platform notifies. Prices must be genuine and inclusive of any taxes you are required to charge, unless the Platform states otherwise.</p></div>
       <div class="cl"><span class="k">7.2</span><p>You must not use the Platform to advertise or drive Buyers to complete the same sale outside the Platform in order to avoid the Platform Fee.</p></div>
+      <div class="cl"><span class="k">7.3</span><p>The price you set is the amount used to calculate your Net Proceeds under §8. At checkout, the Buyer separately pays this listed price plus the Buyer Service Fee described in §8.3. The Buyer Service Fee is charged and retained by Kreate Studio; it is additional to your listed price and does not increase or decrease your Net Proceeds.</p></div>
     </section>
 
     <section class="clause" id="s8">
-      <div class="sec-head"><span class="num">8</span><h2>Platform Fee and Commission</h2></div>
+      <div class="sec-head"><span class="num">08</span><h2>Platform Fee and Commission</h2></div>
       <p>The standard commercial terms for sales are as follows:</p>
       <div class="twrap"><table>
-        <thead><tr><th style="width:38%">Component</th><th style="width:16%">Share</th><th>Notes</th></tr></thead>
+        <thead><tr><th style="width:34%">Component</th><th style="width:14%">Share</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td><b>Seller’s share (Net Proceeds)</b></td><td><span class="pct">90%</span></td><td>Of the sale price, before applicable taxes and any refunds/chargebacks.</td></tr>
-          <tr><td><b>Kreate Studio Platform Fee</b></td><td><span class="pct">10%</span></td><td>Retained by Kreate Studio as commission for providing and operating the marketplace.</td></tr>
+          <tr><td><b>Kreate Studio Platform Fee</b></td><td><span class="pct">10%</span></td><td>Retained by Kreate Studio as commission for providing and operating the marketplace. Deducted from the Seller’s proceeds — see §8.1.</td></tr>
+          <tr><td><b>Buyer Service Fee</b></td><td><span class="pct">12.5%</span></td><td>Charged to the <strong>Buyer</strong> at checkout, in addition to the listed sale price. Collected and retained by Kreate Studio; does not affect the Seller’s Net Proceeds — see §8.3.</td></tr>
           <tr><td>Payment Partner / gateway charges</td><td>At cost</td><td>Any transaction charges levied by the Payment Partner are applied as notified at onboarding.</td></tr>
         </tbody>
       </table></div>
       <div class="cl"><span class="k">8.1</span><p>The Platform Fee is 10% of the sale price of each successful sale unless a different rate is agreed in writing or notified for a specific category or promotion. The Operator may revise the Platform Fee prospectively on reasonable notice under §17.</p></div>
       <div class="cl"><span class="k">8.2</span><p>The Platform Fee is exclusive of taxes; any GST or other tax payable on the Platform Fee (as a supply of service by Kreate Studio to you) is additional and will be invoiced or deducted as required by law.</p></div>
+      <div class="cl"><span class="k">8.3</span><p>Separately from the Platform Fee, Kreate Studio charges <strong>Buyers</strong> a Buyer Service Fee of 12.5% of the listed price at checkout, to cover payment-processing, platform and support costs. The Buyer Service Fee is paid by the Buyer on top of the listed price; it is not deducted from your Net Proceeds and does not change the 90%/10% split above.</p></div>
     </section>
 
     <section class="clause" id="s9">
-      <div class="sec-head"><span class="num">9</span><h2>Payments and Settlement</h2></div>
+      <div class="sec-head"><span class="num">09</span><h2>Payments and Settlement</h2></div>
       <div class="cl"><span class="k">9.1</span><p>All Buyer payments are collected exclusively through the Payment Partner’s infrastructure. Kreate Studio does not itself operate as a payment aggregator.</p></div>
       <div class="cl"><span class="k">9.2</span><p>Where split-settlement (for example, Razorpay Route) is enabled for your account, each sale is settled such that the <strong>Net Proceeds are routed to your linked account and the Platform Fee to Kreate Studio</strong>, through the Payment Partner, so that Kreate Studio does not pool or hold your funds.</p></div>
       <div class="cl"><span class="k">9.3</span><p>To receive settlements you must complete any onboarding, verification or KYC the Payment Partner requires and keep a valid, correctly-named payout account linked. Settlement timelines follow the Payment Partner’s standard cycle and any statutory holding periods.</p></div>
       <div class="cl"><span class="k">9.4</span><p>The Operator may withhold or reverse Net Proceeds in respect of a sale that is refunded, charged back, disputed, suspected of fraud, or found to breach this Policy, and may set off such amounts against future Net Proceeds.</p></div>
       <div class="cl"><span class="k">9.5</span><p>You are responsible for the accuracy of your payout details. The Operator is not liable for settlements delayed or misdirected due to incorrect details you provided.</p></div>
-      <div class="internal">
-        <div class="t">Internal note — remove before publishing</div>
-        <p>At launch (V1.0), split-settlement (Route) is deferred to V1.1. Until it is live, the Platform should operate with first-party listings only, or obtain specific legal advice before onboarding any paid third-party Seller, to avoid the Platform collecting-and-holding third-party funds in a manner that may attract RBI Payment Aggregator regulation.</p>
-      </div>
     </section>
 
     <section class="clause" id="s10">
@@ -394,7 +231,7 @@
       <div class="sec-head"><span class="num">13</span><h2>Suspension and Termination</h2></div>
       <div class="cl"><span class="k">13.1</span><p>You may stop selling and request closure of your Seller account at any time, subject to completion of pending settlements, refunds and obligations accrued before closure.</p></div>
       <p style="margin-top:6px"><strong>13.2 — The Operator may suspend, restrict, delist or terminate your Seller account or any Listing, with or without prior notice where the circumstances reasonably require, if:</strong></p>
-      <ul class="plain">
+      <ul class="pl">
         <li>you breach this Policy or any other Platform policy, or Applicable Law;</li>
         <li>you list infringing, unlawful, harmful or misrepresented Products;</li>
         <li>your conduct exposes the Platform, Buyers or third parties to material risk, fraud or liability;</li>
@@ -429,8 +266,8 @@
         <dl class="grid-kv">
           <dt>Name</dt><dd><strong>Mr. Ansh Bhardwaj</strong> — Designated Grievance Officer</dd>
           <dt>On behalf of</dt><dd>Kreate Studio (operated by Mr. Ansh Bhardwaj, sole proprietor)</dd>
-          <dt>Email</dt><dd class="ph">workwithansh8@gmail.com</dd>
-          <dt>Address</dt><dd class="ph">Agra, Uttar Pradesh, India</dd>
+          <dt>Email</dt><dd><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></dd>
+          <dt>Address</dt><dd>Agra, Uttar Pradesh, India</dd>
           <dt>Response times</dt><dd>Acknowledgement within 24 hours; resolution endeavoured within 15 days</dd>
         </dl>
       </div>
@@ -445,8 +282,8 @@
       <div class="sec-head"><span class="num">18</span><h2>Governing Law, Dispute Resolution and Jurisdiction</h2></div>
       <div class="cl"><span class="k">18.1</span><p>This Policy is governed by and construed in accordance with the laws of India.</p></div>
       <div class="cl"><span class="k">18.2</span><p>Any dispute, controversy or claim arising out of or relating to this Policy, or its breach, termination or validity, shall first be attempted to be resolved amicably between the parties and through the Grievance Officer.</p></div>
-      <div class="cl"><span class="k">18.3</span><p>Failing amicable resolution, the dispute shall be finally settled by arbitration under the Arbitration and Conciliation Act, 1996, before a sole arbitrator appointed by mutual consent. The seat and venue of arbitration shall be <span class="placeholder">[● city, State — e.g. Jaipur, Rajasthan]</span>; the language shall be English; and the arbitral award shall be final and binding on the parties.</p></div>
-      <div class="cl"><span class="k">18.4</span><p>Subject to the arbitration agreement above, the courts at <span class="placeholder">[● city, State]</span> shall have exclusive jurisdiction over any matter arising out of or in connection with this Policy.</p></div>
+      <div class="cl"><span class="k">18.3</span><p>Failing amicable resolution, the dispute shall be finally settled by arbitration under the Arbitration and Conciliation Act, 1996, before a sole arbitrator appointed by mutual consent. The seat and venue of arbitration shall be <strong>Agra, Uttar Pradesh</strong>; the language shall be English; and the arbitral award shall be final and binding on the parties.</p></div>
+      <div class="cl"><span class="k">18.4</span><p>Subject to the arbitration agreement above, the courts at <strong>Agra, Uttar Pradesh</strong> shall have exclusive jurisdiction over any matter arising out of or in connection with this Policy.</p></div>
     </section>
 
     <section class="clause" id="s19">
@@ -455,9 +292,9 @@
       <div class="card">
         <div class="ct">Accepted electronically</div>
         <dl class="grid-kv">
-          <dt>Seller</dt><dd class="ph">Name / account captured at signup</dd>
+          <dt>Seller</dt><dd>Name / account captured at signup</dd>
           <dt>Consent record</dt><dd>Consent flag: <strong>TRUE</strong> (Firebase-verified)</dd>
-          <dt>Date / Version</dt><dd class="ph">Timestamp captured · v1.0</dd>
+          <dt>Date / Version</dt><dd>Timestamp captured · v1.0</dd>
         </dl>
       </div>
     </section>
@@ -465,48 +302,42 @@
   </main>
 </div>
 
-<footer>
-  <div class="in">
-    <p class="dis">This document is a drafting aid prepared to organise Kreate Studio’s Seller relationship. It is not legal advice and does not constitute a compliance determination. Complete all [●] placeholders and have the final text reviewed by a qualified Indian lawyer before it is published or accepted by any Seller.</p>
-    <div class="meta"><span>Kreate Studio</span><span>·</span><span>Seller / Vendor Policy v1.0</span><span>·</span><span>Effective [●] 2026</span></div>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="disclaimer">This document is a drafting aid prepared to organise Kreate Studio’s Seller relationship. It is not legal advice and does not constitute a compliance determination. Complete all [●] placeholders and have the final text reviewed by a qualified Indian lawyer before it is published or accepted by any Seller.</p>
+    <div class="site-footer__top">
+      <div>
+        <div class="site-footer__brand"><img src="assets/img/logo.png" alt=""><span>Kreate Studio</span></div>
+        <p class="site-footer__tag">India's creative assets marketplace — LUTs, UI kits, templates, motion graphics, logo kits and audio packs from independent creators.</p>
+      </div>
+      <div class="site-footer__links">
+        <div class="site-footer__col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="index.html">Privacy Policy</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+            <li><a href="seller-policy.html">Seller Policy</a></li>
+            <li><a href="refund-policy.html">Refund &amp; Cancellation</a></li>
+            <li><a href="grievance.html">Grievance Redressal</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:workwithansh8@gmail.com">workwithansh8@gmail.com</a></li>
+            <li><span>Agra, Uttar Pradesh, India</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>Kreate Studio · Seller / Vendor Policy v1.0 · Effective 10 July 2026</span>
+      <span class="made">Made in India</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  // reading progress
-  const bar = document.getElementById('progress');
-  const onScroll = () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-  };
-  document.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-
-  // scrollspy
-  const links = Array.from(document.querySelectorAll('nav.toc a'));
-  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        const a = map.get(e.target.id);
-        if (a) a.classList.add('active');
-      }
-    });
-  }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
-  document.querySelectorAll('section.clause').forEach(s => spy.observe(s));
-
-  // mobile TOC toggle
-  const toc = document.getElementById('toc');
-  const toggle = document.getElementById('tocToggle');
-  toggle.addEventListener('click', () => {
-    const open = toc.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  toc.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    if (window.innerWidth <= 900) { toc.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
-  }));
-</script>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
